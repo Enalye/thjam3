@@ -1,0 +1,50 @@
+{
+	"name": "game",
+	"authors": [
+		"Enalye",
+		"Mrnuage",
+		"Autumn",
+		"Jonath the Kane"
+	],
+	"description": "TouhouJam 3",
+	"copyright": "Copyright © 2019, Enalye, Mrnuage, Autumn, Jonath Kane",
+	"license": "proprietary",
+	"dependencies": {
+		"atelier": {
+			"version": "~master",
+			"path": "../atelier"
+		}
+	},
+	"targetName": "thjam3",
+	"targetType": "executable",
+	"workingDirectory": "..",
+	"buildTypes": {
+		"unittest": {
+			"buildOptions": ["unittests", "debugMode", "debugInfo"]
+		},
+		"debug": {
+			"buildOptions": ["debugMode", "debugInfo"]
+		},
+		"release": {
+			"buildOptions": ["releaseMode", "optimize", "inline", "noBoundsCheck"]
+		}
+	},
+	"configurations": [
+		{
+			"name": "linux-build",
+			"platforms": ["linux"],
+			"targetPath": "../bin",
+			"postBuildCommands": [
+				"cp ../lib/*.dll ../bin"
+			]
+		},
+		{
+			"name": "windows-build",
+			"platforms": ["windows"],
+			"targetPath": "../bin",
+			"postBuildCommands": [
+				"copy ..\\lib\\*.dll ..\\bin"
+			]
+		}
+	]
+}
