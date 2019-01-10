@@ -1,6 +1,12 @@
 import std.stdio;
 
-void main()
-{
-	writeln("Edit source/app.d to start your project.");
+import game.menu;
+
+void main(string[] args) {
+	try {
+		setupApplication(args);
+	}
+	catch(Exception e) {
+		writeln(e.msg);
+	}
 }
