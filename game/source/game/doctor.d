@@ -4,10 +4,6 @@ import std.file, std.json, std.conv, std.typecons;
 import atelier;
 import game.patient, game.menu;
 
-struct Action {
-    int thirst, hunger, inconsciousness, intoxication, pain, sickness, sadness;
-    bool hasProthesis;
-}
 
 final class Doctor {
     private {
@@ -23,26 +19,6 @@ final class Doctor {
         _talksJson = getJsonArray(_json, "talks");
         _observationsJson = getJsonArray(_json, "observations");
         _patients = getJsonArrayStr(_json, "patients");
-    }
-
-    Action doAction(string id, Patient patient) {
-        foreach(node; _actionsJson) {
-            if(getJsonStr(node, "id") == id) {
-                Action action;
-                action.thirst = getJsonInt(node, "thirst", 0);
-                action.hunger = getJsonInt(node, "hunger", 0);
-                action.inconsciousness = getJsonInt(node, "inconsciousness", 0);
-                action.intoxication = getJsonInt(node, "intoxication", 0);
-                action.pain = getJsonInt(node, "pain", 0);
-                action.sickness = getJsonInt(node, "sickness", 0);
-                action.sadness = getJsonInt(node, "sadness", 0);
-
-                patient.doAction(action);
-
-                return action;
-            }
-        }
-        throw new Exception("No `'" ~ id ~ "\' action found");
     }
 
     Patient getNextPatient() {

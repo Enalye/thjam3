@@ -4,13 +4,11 @@
     "actions": [
         {
             "id": "water",
-            "name": "Give water",
-            "thirst": -10
+            "name": "Give water"
         },
         {
             "id": "food",
-            "name": "Feed",
-            "hunger": -15
+            "name": "Feed"
         }
     ],
     "talks": [
