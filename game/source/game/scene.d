@@ -4,6 +4,46 @@ import std.typecons;
 import atelier;
 import game.patient, game.doctor, game.menu, game.dialog;
 
+class MainButton: Button {
+    private {
+        Sprite _sprite;
+    }
+
+    this(string name) {
+        _sprite = fetch!Sprite("menu_circle");
+        _sprite.size = Vec2f(100f, 100f);
+        size(_sprite.size);
+
+        auto lbl = new Label(name);
+        lbl.setAlign(GuiAlignX.Center, GuiAlignY.Center);
+        addChildGui(lbl);
+    }
+
+    override void draw() {
+        _sprite.draw(center);
+    }
+}
+
+class MenuButton: Button {
+    private {
+        Sprite _sprite;
+    }
+
+    this(string name) {
+        _sprite = fetch!Sprite("menu_rect");
+        _sprite.size = Vec2f(100f, 25f);
+        size(_sprite.size);
+
+        auto lbl = new Label(name);
+        lbl.setAlign(GuiAlignX.Center, GuiAlignY.Center);
+        addChildGui(lbl);
+    }
+
+    override void draw() {
+        _sprite.draw(center);
+    }
+}
+
 class SceneGui: GuiElement {
     Patient _patient;
     Doctor _doctor;
@@ -16,20 +56,20 @@ class SceneGui: GuiElement {
         box.setAlign(GuiAlignX.Right, GuiAlignY.Center);
         addChildGui(box);
         {
-            auto talksBtn = new TextButton("Talk");
+            auto talksBtn = new MainButton("Talk");
             talksBtn.setCallback(this, "talk");
             box.addChildGui(talksBtn);
 
-            auto observationsBtn = new TextButton("Observe");
+            auto observationsBtn = new MainButton("Observe");
             observationsBtn.setCallback(this, "observe");
             box.addChildGui(observationsBtn);
 
-            auto actionsBtn = new TextButton("Actions");
+            auto actionsBtn = new MainButton("Actions");
             actionsBtn.setCallback(this, "action");
             box.addChildGui(actionsBtn);
         }
 
-        auto menuBtn = new TextButton("Menu");
+        auto menuBtn = new MenuButton("Menu");
         menuBtn.setCallback(this, "menu");
         addChildGui(menuBtn);
 

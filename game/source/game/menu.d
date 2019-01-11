@@ -20,8 +20,8 @@ void onLoadComplete() {
 }
 
 void onMainMenu() {
-	//addRootGui(new MainMenuGui);
-    addRootGui(new SceneGui("data/doctors/eirin.json"));
+    removeRootGuis();
+	addRootGui(new MainMenuGui);
 }
 
 /// Character selection screen
@@ -32,6 +32,11 @@ final class MainMenuGui: GuiElement {
         auto label = new Label("THJAM3");
         label.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(label);
+    }
+
+    override void onSubmit() {
+        removeRootGuis();
+        addRootGui(new SceneGui("data/doctors/eirin.json"));
     }
 
     override void update(float deltaTime) {
