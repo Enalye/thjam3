@@ -1,0 +1,57 @@
+{
+    "name": "Nameless",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 0,
+        "intoxication": 0,
+        "pain": 90,
+        "sickness": 70,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "Good morning. Sorry to bother you, but there is something getting to my head."
+            }        
+        ],
+        "how": [
+            {
+                "text": "I'm loosing it ! My head. Literally."
+            },
+            {
+                "text": "I can't move it as I should, it just drops like a dead weight."
+            }
+        ],
+        "what": [
+            {
+                "text": "I would shrug if I could, nothing much."
+            },
+            {
+                "text": "I was heading to the human village when my head suddenly stopped floating."
+            }          
+        ],
+        "check": [
+            {
+                "text": "{i}She shivers as you touch her shoulders. Looks like she's in pain but doesn't want to admit it.{s}"
+            },
+            {
+                "text": "{i}You try attaching her head back but it falls on the ground.{s}",
+                "pain": 10,
+                "sickness": 20
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "It's fine, I can bear it.",
+                "pain": -50,
+            }
+        ],
+        "prosthesis": [
+            {
+                "text": "{i}This should keep her head in place while she recovers.{s}",
+                "sickness": -100
+            }
+        ]
+    }
+}

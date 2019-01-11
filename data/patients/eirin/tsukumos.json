@@ -1,0 +1,57 @@
+{
+    "name": "Nameless",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 2,
+        "intoxication": 0,
+        "pain": 50,
+        "sickness": 90,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "{i}A red head girl enters in the office carrying with pain two unconscious bodies, then leaves{s}"
+            }
+        ],
+        "how": [
+            {
+                "text": "Numb. Pains a lot. What happened ?"
+            }
+        ],
+        "what": [
+            {
+                "text": "Yatsuhashi: The last thing we remember is playing at the concert with Raiko. Where is she ?"
+            },
+            {
+                "text": "Benben: The last thing I remember is seeing a white flash coming from her",
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}You notice burns on their skin.{s}",
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}Nothing broken but you can find out the damage traces a line, as if something traversed their body.{s}",
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "{i}This should calm them down and make it less painful{s}",
+                "pain": -50
+            },
+            {
+                "text": "{i}You've already given them some. Some more could be a bad idea seeing their state{s}"
+            }
+        ],
+        "medicine": [
+            {
+                "text": "{i}The cure all begins to kick in and wakes them up{s}",
+                "unconsciousness": 0
+            }
+        ]
+    }
+}

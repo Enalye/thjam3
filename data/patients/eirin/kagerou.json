@@ -1,0 +1,46 @@
+{
+    "name": "Nameless",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 0,
+        "intoxication": 0,
+        "pain": 20,
+        "sickness": 20,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "I haven't slept in days. Or nights, for the matter."
+            }
+        ],
+        "how": [
+            {
+                "text": " I just told you. I've been clawing at my fur for ages but it still bites.",
+            }
+        ],
+        "what": [
+            {
+                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack",
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}You notice packs of skin without fur, as well as a few bugs here and there.{s}",
+            }
+        ],
+        "prosthesis": [
+            {
+                "text": "This cone should avoid her scratching too much, but she looks annoyed at the idea",
+                "sickness": -20
+            }
+        ],
+        "medicine": [
+            {
+                "text": "Ah, thank you. I can already hear them stop bugging me.",
+                "sickness": -60
+            }
+        ]
+    }
+}
