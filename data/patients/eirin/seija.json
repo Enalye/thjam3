@@ -3,7 +3,7 @@
     "init": {
         "thirst": 20,
         "hunger": 50,
-        "inconsciousness": 0,
+        "unconsciousness": 0,
         "intoxication": 0,
         "pain": 20,
         "sickness": 99,

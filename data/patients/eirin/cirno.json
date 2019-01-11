@@ -1,0 +1,64 @@
+{
+    "name": "Cirno",
+    "init": {
+        "thirst": 20,
+        "hunger": 50,
+        "unconsciousness": 1,
+        "intoxication": 0,
+        "pain": 60,
+        "sickness": 70,
+        "sadness": 80
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "I am the strongest ! But I still need a doctor once in a while..."
+            }
+        ],
+        "how": [
+            {
+                "text": "I don't know what to say. I've never experienced something like this."
+            },
+            {
+                "text": "I can't stop sneezing but it's not because of the flowers. I froze most I could find."
+            }
+        ],
+        "what": [
+            {
+                "text": "I have been playing quite a lot. Freezing frogs, fairies, humans even"
+            },
+            {
+                "text": "Then Letty came up and we began using our powers together. Maybe that was a bit too much, we froze most of the lake."
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}As you touch her, you get frozen.{s}",
+                "sickness": 30
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}Looks like ice crystals are forming inside her body.{s}"
+            }
+        ],
+        "temperature": [
+            {
+                "text": "{i}She is cold. Actually, surprisingly cold, even for an ice fairy !{s}"
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "{i}Pretty bad idea. She begins shivering and collapses.{s}",
+                "unconsciousness": "2",
+                "sickness": 30
+            }
+        ],
+        "medicine": [
+            {
+                "text": "{i}Her temperature stabilizes. Looks like it was a good idea !{s}",
+                "sickness": -100
+            }
+        ]
+    }
+}
