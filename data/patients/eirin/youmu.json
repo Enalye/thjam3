@@ -3,7 +3,7 @@
     "init": {
         "thirst": 20,
         "hunger": 50,
-        "inconsciousness": 0,
+        "unconsciousness": 0,
         "intoxication": 0,
         "pain": 20,
         "sickness": 99,
@@ -12,17 +12,17 @@
     "behaviour": {
         "hello": [
             {
-                "text": "The next patient enters the room crawling on their four limbs. You recognize the Netherworld Gardner."
+                "text": "{i}The next patient enters the room crawling on their four limbs. You recognize the Netherworld Gardner.{s}"
             }
         ],
         "how": [
             {
-                "text": "{s}She growls at you{i}"
+                "text": "{i}She growls at you{s}"
             }
         ],
         "what": [
             {
-                "text": "{s}She growls at you{i}"
+                "text": "{i}She growls at you{s}"
             }
         ],
         "check": [

@@ -44,7 +44,7 @@
         "painkillers": [
             {
                 "text": "It's fine, I can bear it.",
-                "pain": -50,
+                "pain": -50
             }
         ],
         "prosthesis": [
