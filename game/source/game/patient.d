@@ -50,31 +50,44 @@ class Patient {
         _state = newState;
     }
 
-    void doAction(Action action) {
-        _thirst += action.thirst;
-        _hunger += action.hunger;
-        _inconsciousness += action.inconsciousness;
-        _intoxication += action.intoxication;
-        _pain += action.pain;
-        _sickness += action.sickness;
-        _sadness += action.sadness;
+    string doThing(string id) {
+        if(!hasJson(_behaviourJson, id))
+            throw new Exception("No id \'" ~ id ~ "\' found in patient");
+        auto list = getJsonArray(_behaviourJson, id);
+        auto node = list.choice();
+        
+        auto txt = "";
+        if(hasJson(node, "text")) {
+            txt = getJsonStr(node, "text");
+
+        }
+
+        _thirst += getJsonInt(node, "thirst", 0);
+        _hunger += getJsonInt(node, "hunger", 0);
+        _inconsciousness += getJsonInt(node, "inconsciousness", 0);
+        _intoxication += getJsonInt(node, "intoxication", 0);
+        _pain += getJsonInt(node, "pain", 0);
+        _sickness += getJsonInt(node, "sickness", 0);
+        _sadness += getJsonInt(node, "sadness", 0);
 
         processState();
+        return txt;
     }
 
-    string getObservation(string id) {
-        if(!hasJson(_behaviourJson, id))
-            throw new Exception("No id \'" ~ id ~ "\' found in patient");
-
-        auto list = getJsonArrayStr(_behaviourJson, id);
-        return list.choice();
+    void doAction(string id) {
+        string txt = doThing(id);
+        writeln("Act: ", txt);
     }
 
-    string getTalk(string id) {
-        if(!hasJson(_behaviourJson, id))
-            throw new Exception("No id \'" ~ id ~ "\' found in patient");
+    void doObservation(string id) {
+        string txt = doThing(id);
+        writeln("Obs: ", txt);
 
-        auto list = getJsonArrayStr(_behaviourJson, id);
-        return list.choice();
+    }
+
+    void doTalk(string id) {
+        string txt = doThing(id);
+        writeln("Talk: ", txt);
+        
     }
 }

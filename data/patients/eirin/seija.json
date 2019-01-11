@@ -10,15 +10,38 @@
         "sadness": 20
     },
     "behaviour": {
-        "water": ["More watah"],
-        "food": ["miam"],
+        "hello": [
+            {
+                "text": "Hello world !",
+                "sickness": 0
+            }
+        ],
+        "water": [
+            {
+                "text": "{i}Looks like they were %s thirsty{s}",
+                "thirst": -10
+            }
+        ],
+        "food": [
+            {
+                "text": "miam"
+            }
+        ],
         "how": [
-            "I'm fine !",
-            "Why are you asking ?",
-            "I don't like you."
+            {
+                "text": "I'm fine !"
+            },
+            {
+                "text": "Why are you asking ?"
+            },
+            {
+                "text": "I don't like you."
+            }
         ],
         "check": [
-            "temporary"
+            {
+                "text": "temporary"
+            }
         ]
     }
 }

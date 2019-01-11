@@ -2,11 +2,12 @@ module game.scene;
 
 import std.typecons;
 import atelier;
-import game.patient, game.doctor, game.menu;
+import game.patient, game.doctor, game.menu, game.dialog;
 
 class SceneGui: GuiElement {
     Patient _patient;
     Doctor _doctor;
+    DialogGui _dialogGui;
 
     this(string doctorName) {
         size(screenSize);
@@ -34,6 +35,9 @@ class SceneGui: GuiElement {
 
         _doctor = new Doctor(doctorName);
         _patient = _doctor.getNextPatient();
+
+        _dialogGui = new DialogGui;
+        addChildGui(_dialogGui);
     }
 
     override void onCallback(string id) {
@@ -55,15 +59,15 @@ class SceneGui: GuiElement {
             break;
         case "modal.talk":
             auto modal = getModalGui!TalkGui();
-            writeln("TALK: " ~ _patient.getTalk(modal.value));
+            _patient.doTalk(modal.value);
             break;
         case "modal.observe":
             auto modal = getModalGui!ObserveGui();
-            writeln("OBSERVE: " ~ _patient.getObservation(modal.value));
+            _patient.doObservation(modal.value);
             break;
         case "modal.action":
             auto modal = getModalGui!ActionGui();
-            _doctor.doAction(modal.value, _patient);
+            _patient.doAction(modal.value);
             break;
         case "menu":
             setModalGui(new MenuConfirmationGui);
