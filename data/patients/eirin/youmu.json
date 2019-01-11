@@ -1,0 +1,57 @@
+{
+    "name": "Youmu",
+    "init": {
+        "thirst": 20,
+        "hunger": 50,
+        "inconsciousness": 0,
+        "intoxication": 0,
+        "pain": 20,
+        "sickness": 99,
+        "sadness": 80
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "The next patient enters the room crawling on their four limbs. You recognize the Netherworld Gardner."
+            }
+        ],
+        "how": [
+            {
+                "text": "{s}She growls at you{i}"
+            }
+        ],
+        "what": [
+            {
+                "text": "{s}She growls at you{i}"
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}You notice her other, better half, is missing.{s}",
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}Her insides are full of... Ectoplasm ?{s}",
+            }
+        ],
+        "operate": [
+            {
+                "text": "{i}As you open her up, the ghost lunges at you. It seems you're going to be its next victim{s}",
+                "sickness": -100
+            }
+        ],
+        "magic": [
+            {
+                "text": "{i}You try performing an exorcism. After several hours of old incantations, you manage partially purge the ghost.{s}",
+                "sickness": -50
+            }
+        ],
+        "medicine": [
+            {
+                "text": "{i}The medicine partially relieves Youmu from... herself ? But the spirit's influence still lingers.{s}",
+                "sickness": -50
+            }
+        ]
+    }
+}
