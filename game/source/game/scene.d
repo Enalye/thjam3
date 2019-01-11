@@ -47,9 +47,9 @@ class MenuButton: Button {
 class SceneGui: GuiElement {
     Patient _patient;
     Doctor _doctor;
-    DialogGui _dialogGui;
 
     this(string doctorName) {
+        dialogGui = new DialogGui;
         size(screenSize);
 
         auto box = new VContainer;
@@ -76,8 +76,7 @@ class SceneGui: GuiElement {
         _doctor = new Doctor(doctorName);
         _patient = _doctor.getNextPatient();
 
-        _dialogGui = new DialogGui;
-        addChildGui(_dialogGui);
+        addChildGui(dialogGui);
     }
 
     override void onCallback(string id) {

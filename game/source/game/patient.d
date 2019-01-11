@@ -2,7 +2,7 @@ module game.patient;
 
 import std.file, std.json, std.random;
 import atelier;
-import game.doctor;
+import game.doctor, game.dialog;
 
 enum PatientState {
     Normal, Unconscious, Cured, InPain, Dead, Failed, Happy, Distress
@@ -51,15 +51,15 @@ class Patient {
     }
 
     string doThing(string id) {
-        if(!hasJson(_behaviourJson, id))
-            throw new Exception("No id \'" ~ id ~ "\' found in patient");
+        auto txt = "";
+        if(!hasJson(_behaviourJson, id)) {
+            return "$$$";
+        }
         auto list = getJsonArray(_behaviourJson, id);
         auto node = list.choice();
         
-        auto txt = "";
         if(hasJson(node, "text")) {
             txt = getJsonStr(node, "text");
-
         }
 
         _thirst += getJsonInt(node, "thirst", 0);
@@ -76,18 +76,31 @@ class Patient {
 
     void doAction(string id) {
         string txt = doThing(id);
-        writeln("Act: ", txt);
+        if(txt.length && dialogGui !is null) {
+            if(txt == "$$$")
+                dialogGui.setNewDialog(" ", "It does not seem very effective.");
+            else
+                dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
+        }
     }
 
     void doObservation(string id) {
         string txt = doThing(id);
-        writeln("Obs: ", txt);
-
+        if(txt.length && dialogGui !is null) {
+            if(txt == "$$$")
+                dialogGui.setNewDialog(" ", "Can't seem to find anything.");
+            else
+                dialogGui.setNewDialog(" ", txt);
+        }
     }
 
     void doTalk(string id) {
         string txt = doThing(id);
-        writeln("Talk: ", txt);
-        
+        if(txt.length && dialogGui !is null) {
+            if(txt == "$$$")
+                dialogGui.setNewDialog(" ", "She does not respond.");
+            else                
+                dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
+        }
     }
 }
