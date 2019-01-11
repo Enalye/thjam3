@@ -2,23 +2,54 @@
     "name": "Seija",
     "init": {
         "thirst": 20,
-        "hunger": 20,
-        "inconsciousness": 20,
-        "intoxication": 20,
+        "hunger": 50,
+        "inconsciousness": 0,
+        "intoxication": 0,
         "pain": 20,
-        "sickness": 20,
-        "sadness": 20
+        "sickness": 99,
+        "sadness": 80
     },
     "behaviour": {
-        "water": ["More watah"],
-        "food": ["miam"],
+        "hello": [
+            {
+                "text": "I've been stuck like this for days. Can't revert back to normal anymore."
+            }
+        ],
         "how": [
-            "I'm fine !",
-            "Why are you asking ?",
-            "I don't like you."
+            {
+                "text": "Angry. Stuck. Can't even walk or fly straight."
+            }
+        ],
+        "what": [
+            {
+                "text": "I was laughing at Sekibanki and trying to imitate her."
+            }
         ],
         "check": [
-            "temporary"
+            {
+                "text": "{i}Nothing else aside from her face turned backwards{s}",
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}Her bones and ligaments around the neck are twisted. Using her power like this was clearly a bad idea.{s}",
+            }
+        ],
+        "prosthesis": [
+            {
+                "text": "{i}Her ailment is too serious for this...{s}"
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "Pain killers ? No thanks, pain makes me more alive !"
+            }
+        ],
+        "operate": [
+            {
+                "text": "{i} *It takes you a few hours in the block, but you manage to put back most of her bones in the right place{s}",
+                "sickness": 100
+            }
         ]
     }
 }

@@ -1,0 +1,110 @@
+{
+    "name": "Nameless",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 0,
+        "intoxication": 0,
+        "pain": 20,
+        "sickness": 20,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "Hello world !"
+            }
+        ],
+        "how": [
+            {
+                "text": "Why are you still asking ?"
+            }
+        ],
+        "what": [
+            {
+                "text": "I've told you everything there is to know."
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}You do additional checks but there is nothing else unusual.{s}"
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}You do run the scanner, but every other organ and bone seems to be in their right place.{s}"
+            }
+        ],
+        "temperature": [
+            {
+                "text": "{i}Their temperature is normal.{s}"
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "{i}That was unecessary. They look drowsy now.{s}",
+                "unconsciousness": 1
+            },
+            {
+                "text": "{i}Congratulations ! They are now unconscious !{s}",
+                "unconsciousness": 2,
+                "pain": 50
+            }
+        ],
+        "water": [
+            {
+                "text": "{i}Looks like they were %s thirsty{s}",
+                "thirst": -10
+            }
+        ],
+        "food": [
+            {
+                "text": "{i}Looks like they were %s hungry{s}",
+                "hunger": -15
+            }
+        ],
+        "prosthesis": [
+            {
+                "text": "{i}You lose precious time making plans for a useless contraption.{s}",
+                "sickness": 20
+            }
+        ],
+        "punch": [
+            {
+                "text": "{i}Hey what was that for ?",
+                "sickness": 30,
+                "pain": 30
+            },
+            {
+                "text": "{i}Stop that, damn it !",
+                "sickness": 30,
+                "pain": 30
+            },
+            {
+                "text": "{i}Okay, I didn't sign up for a beating. I'm off.",
+                "sickness": 40,
+                "pain": 30
+            }
+        ],
+        "medicine": [
+            {
+                "text": "{i}The cure all has its limits. A higher dose of homeopathic Hourai would solve it but also make them immortal. Bad idea.{s}"
+            },
+            {
+                "text": "{i}You decide do give them the elixir nonetheless. They heal up fully but in a matter of seconds, moon bunnies circle and arrest you...{s}"
+            }
+        ],
+        "magic": [
+            {
+                "text": "{i}You don't fight fire with fire{s}",
+                "pain": 30
+            }
+        ],
+        "operate": [
+            {
+                "text": "{i}For some reason, you take your patient to the block and proceed to slice them open. After a while you notice there was nothing wrong but you already made quite a mess...{s}",
+                "sickness": 100
+            }
+        ]
+    }
+}

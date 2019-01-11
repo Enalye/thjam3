@@ -1,0 +1,58 @@
+{
+    "name": "Wakasagihime",
+    "init": {
+        "thirst": 100,
+        "hunger": 40,
+        "unconsciousness": 0,
+        "intoxication": 0,
+        "pain": 30,
+        "sickness": 20,
+        "sadness": 60
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "Hello doctor Yagokoro. I don't feel so good."
+            }
+        ],
+        "how": [
+            {
+                "text": "Drained out. I have a big headache since this morning as well.",
+            },
+            {
+                "text": "No, I didn't drink anything weird. Quite the opposite actually."
+            }
+        ],
+        "what": [
+            {
+                "text": "I have been swimming in the part of the lake near the geysers. The water is surprisingly salty there."
+            },
+            {
+                "text": "Well, and now I have been waiting in the queue for ages."
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}Her scales are very dry, potentially from the long wait in the queue.{s}"
+            }
+        ],
+        "painkillers": [
+            {
+                "text": "{i}That should really help with my headache, thanks !{s}",
+                "pain": -30,
+                "sickness": -10
+            }
+        ],
+        "water": [
+            {
+                "text": "Ah, thanks, this is revitalizing. More please !",
+                "thirst": -30,
+                "sickness": -10
+            },
+            {
+                "text": "She drinks jars of the liquid. Must have really been dehydrated.",
+                "thirst": -70
+            }
+        ]
+    }
+}
