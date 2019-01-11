@@ -1,0 +1,24 @@
+{
+    "name": "Seija",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "inconsciousness": 20,
+        "intoxication": 20,
+        "pain": 20,
+        "sickness": 20,
+        "sadness": 20
+    },
+    "behaviour": {
+        "water": ["More watah"],
+        "food": ["miam"],
+        "how": [
+            "I'm fine !",
+            "Why are you asking ?",
+            "I don't like you."
+        ],
+        "check": [
+            "temporary"
+        ]
+    }
+}

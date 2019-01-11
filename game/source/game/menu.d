@@ -26,7 +26,7 @@ module game.menu;
 
 import std.stdio, std.conv;
 import atelier;
-import game.loader;
+import game.loader, game.scene;
 
 void setupApplication(string[] args) {
 	createApplication(Vec2u(1280u, 720u), "Thjam3");
@@ -44,10 +44,12 @@ void onLoadComplete() {
 }
 
 void onMainMenu() {
-	addRootGui(new MainGui);
+	//addRootGui(new MainMenuGui);
+    addRootGui(new SceneGui("data/doctors/eirin.json"));
 }
 
-final class MainGui: GuiElement {
+/// Character selection screen
+final class MainMenuGui: GuiElement {
     this() {
         size(screenSize);
 

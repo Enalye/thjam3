@@ -1,0 +1,31 @@
+{
+    "id": "eirin",
+    "name": "Eirin",
+    "actions": [
+        {
+            "id": "water",
+            "name": "Give water",
+            "thirst": -10
+        },
+        {
+            "id": "food",
+            "name": "Feed",
+            "hunger": -15
+        }
+    ],
+    "talks": [
+        {
+            "id": "how",
+            "name": "How are you ?"
+        }
+    ],
+    "observations": [
+        {
+            "id": "check",
+            "name": "Check"
+        }
+    ],
+    "patients": [
+        "seija"
+    ]
+}
