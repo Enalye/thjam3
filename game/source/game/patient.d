@@ -1,6 +1,6 @@
 module game.patient;
 
-import std.file, std.json, std.random;
+import std.stdio, std.file, std.json, std.random, std.typecons;
 import atelier;
 import game.doctor, game.dialog;
 
@@ -12,31 +12,22 @@ class Patient {
     private {
         PatientState _state;
 
-        int _hunger, _thirst, _inconsciousness, _intoxication, _pain, _sickness, _sadness;
+        int _inconsciousness, _intoxication, _sickness, _symptoms;
 
-        bool _needProthesis;
-
-
-        JSONValue _json, _behaviourJson;
+        JSONValue _json;
+        JSONValue[string] _savedNodes;
     }
 
     this(string name) {
         _json = parseJSON(readText(name));
 
-        if(!hasJson(_json, "behaviour"))
-            throw new Exception("No behaviour scope found in patient");
-        _behaviourJson = getJson(_json, "behaviour");
-
         if(!hasJson(_json, "init"))
             throw new Exception("No init scope found in patient");
         auto node = getJson(_json, "init");
-        _thirst = getJsonInt(node, "thirst", 0);
-        _hunger = getJsonInt(node, "hunger", 0);
         _inconsciousness = getJsonInt(node, "inconsciousness", 0);
         _intoxication = getJsonInt(node, "intoxication", 0);
-        _pain = getJsonInt(node, "pain", 0);
         _sickness = getJsonInt(node, "sickness", 0);
-        _sadness = getJsonInt(node, "sadness", 0);
+        _symptoms = getJsonInt(node, "symptoms", 0);
     }
 
     // Calculate the current state of the patient according to the patient's values
@@ -50,57 +41,91 @@ class Patient {
         _state = newState;
     }
 
-    string doThing(string id) {
+    string doThing(string parentId, string id) {
         auto txt = "";
-        if(!hasJson(_behaviourJson, id)) {
-            return "$$$";
-        }
-        auto list = getJsonArray(_behaviourJson, id);
-        auto node = list.choice();
+        if(!hasJson(_json, parentId))
+            throw new Exception("No scope \'" ~ id ~ "\' found in patient");
+        JSONValue parentNode = getJson(_json, parentId);
+ 
+        //auto list = getJsonArray(parentNode, id);
+        auto node = _savedNodes[id];
         
         if(hasJson(node, "text")) {
             txt = getJsonStr(node, "text");
         }
 
-        _thirst += getJsonInt(node, "thirst", 0);
-        _hunger += getJsonInt(node, "hunger", 0);
         _inconsciousness += getJsonInt(node, "inconsciousness", 0);
         _intoxication += getJsonInt(node, "intoxication", 0);
-        _pain += getJsonInt(node, "pain", 0);
         _sickness += getJsonInt(node, "sickness", 0);
-        _sadness += getJsonInt(node, "sadness", 0);
+        _symptoms += getJsonInt(node, "symptoms", 0);
 
         processState();
         return txt;
     }
 
     void doAction(string id) {
-        string txt = doThing(id);
+        string txt = doThing("actions", id);
         if(txt.length && dialogGui !is null) {
-            if(txt == "$$$")
-                dialogGui.setNewDialog(" ", "It does not seem very effective.");
-            else
-                dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
+            dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
         }
     }
 
     void doObservation(string id) {
-        string txt = doThing(id);
+        string txt = doThing("observations", id);
         if(txt.length && dialogGui !is null) {
-            if(txt == "$$$")
-                dialogGui.setNewDialog(" ", "Can't seem to find anything.");
-            else
-                dialogGui.setNewDialog(" ", txt);
+            dialogGui.setNewDialog(" ", txt);
         }
     }
 
     void doTalk(string id) {
-        string txt = doThing(id);
+        string txt = doThing("talks", id);
         if(txt.length && dialogGui !is null) {
-            if(txt == "$$$")
-                dialogGui.setNewDialog(" ", "She does not respond.");
-            else                
-                dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
+            dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
         }
+    }
+
+    private Tuple!(string, string)[] getList(string id) {
+        if(!hasJson(_json, id))
+            throw new Exception("No scope \'" ~ id ~ "\' found in patient");
+        JSONValue parentNode = getJson(_json, id);
+        Tuple!(string, string)[] list;
+        foreach(string tag, JSONValue node; parentNode.object) {
+            auto ary = getJsonArray(parentNode, tag);
+            bool hasValue = false;
+            foreach(value; ary) {
+                if(!hasJson(value, "nbSymptomsNeeded"))
+                    continue;
+                if(getJsonInt(value, "nbSymptomsNeeded") == _symptoms) {
+                    _savedNodes[tag] = value;
+                    hasValue = true;
+                    break;
+                }
+            }
+            if(!hasValue && ary.length) {
+                foreach(value; ary) {
+                    if(!hasJson(value, "nbSymptomsNeeded")) {
+                        _savedNodes[tag] = value;
+                        hasValue = true;
+                        break;
+                    }
+                }
+            }
+            if(hasValue) {
+                list ~= tuple(tag, getJsonStr(_savedNodes[tag], "name"));
+            }
+        }
+        return list;
+    }
+
+    Tuple!(string, string)[] getActionList() {
+        return getList("actions");
+    }
+
+    Tuple!(string, string)[] getTalkList() {
+        return getList("talks");
+    }
+
+    Tuple!(string, string)[] getObservationList() {
+        return getList("observations");
     }
 }

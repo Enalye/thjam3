@@ -1,5 +1,6 @@
 module game.dialog;
 
+import std.conv: to;
 import atelier;
 
 DialogGui dialogGui;
@@ -18,8 +19,8 @@ class DialogGui: GuiElement {
 
     this() {
         size(Vec2f(300f, 200f));
-        position(Vec2f(150f, 50f));
-        setAlign(GuiAlignX.Right, GuiAlignY.Top);
+        position(Vec2f(0f, 25f));
+        setAlign(GuiAlignX.Center, GuiAlignY.Top);
 
         _box = new VContainer;
         _box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
