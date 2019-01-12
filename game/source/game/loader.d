@@ -25,6 +25,8 @@ class LoaderGui: GuiElement {
         auto startTime = MonoTime.currTime();
         loadTextures();
         loadFont();
+        loadSound();
+        loadBgm();
         auto deltaTime = MonoTime.currTime() - startTime;
         //writeln(deltaTime);
         //Load completed
@@ -41,7 +43,27 @@ class LoaderGui: GuiElement {
     }
 }
 
+void loadSound() {
+    auto soundCache = new ResourceCache!Sound;
+	setResourceCache!Sound(soundCache);
 
+
+    auto files = dirEntries("media/sound/", "{*.ogg}", SpanMode.depth);
+    foreach(file; files) {
+        soundCache.set(new Sound(file), baseName(file, ".ogg"));
+    }
+}
+
+void loadBgm() {
+    auto musicCache = new ResourceCache!Music;
+	setResourceCache!Music(musicCache);
+
+
+    auto files = dirEntries("media/bgm/", "{*.ogg}", SpanMode.depth);
+    foreach(file; files) {
+        musicCache.set(new Music(file), baseName(file, ".ogg"));
+    }
+}
 void loadTextures() {
     auto textureCache = new ResourceCache!Texture;
     auto spriteCache = new ResourceCache!Sprite;
