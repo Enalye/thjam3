@@ -33,7 +33,7 @@
             {
                 "nbSymptomsNeeded": 9,
                 "name": "Cheer her up by agitating your arms",
-                "text": "{i}It always manages to lighten up her mood.{n}She is less tense already{s}",
+                "narrator": "{i}It always manages to lighten up her mood.{n}She is less tense already{s}",
                 "symptoms": -5,
                 "sickness": -25
             }
@@ -41,7 +41,7 @@
         "cat": [
             {
                 "name": "Call rin to play",
-                "text": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
+                "narrator": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
                 "symptoms": -10,
                 "sickness": 20
             },
@@ -52,7 +52,7 @@
             {
                 "nbSymptomsNeeded": 14,
                 "name": "Check her eye",
-                "text": "{i}You notice her third eye is bloated, and abnormally red.{s}",
+                "narrator": "{i}You notice her third eye is bloated, and abnormally red.{s}",
                 "symptoms": -1
             }
         ],
@@ -60,7 +60,7 @@
             {
                 "nbSymptomsNeeded": 13,
                 "name": "Try to read her subconscious",
-                "text": "{i}You feel a burning eye. You see sea of flammes.{s}",
+                "narrator": "{i}You feel a burning eye. You see sea of flammes.{s}",
                 "symptoms": -4
             }
         ],
@@ -75,7 +75,7 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Attach wings to the third eye",
-                "text": "{i}The third eye now became an evil eye.{n}It cries bloody tears.{n}This is painful but it gets less bloated in the end.{s}",
+                "narrator": "{i}The third eye now became an evil eye.{n}It cries bloody tears.{n}This is painful but it gets less bloated in the end.{s}",
                 "symptoms": -3,
                 "sickness": 50
             }
@@ -84,7 +84,7 @@
             {
                 "nbSymptomsNeeded": 4,
                 "name": "Operate her eye",
-                "text": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though{s}",
+                "narrator": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though{s}",
                 "sickness": -25,
                 "symptoms": -1
             }
@@ -100,7 +100,7 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Try to find something to patch her up",
-                "text": "{i}Looking into your trinkets, you find an adaptative Kappa lense.{n}The lucky find should help with Satori's sight.",
+                "narrator": "{i}Looking into your trinkets, you find an adaptative Kappa lense.{n}The lucky find should help with Satori's sight.",
                 "sickness": -100,
                 "symptoms": -1,
             }

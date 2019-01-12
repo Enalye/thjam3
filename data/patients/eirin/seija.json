@@ -27,20 +27,20 @@
         "check": [
             {
                 "name": "Check out her body",
-                "text": "{i}Nothing unusual...{n}Aside from her face turned backwards.{s}"
+                "narrator": "{i}Nothing unusual...{n}Aside from her face turned backwards.{s}"
             }
         ],
         "scanner": [
             {
                 "nbSymptomsNeeded": 5,
                 "name": "Use the lunarian scanner",
-                "text": "{i}Her bones and ligaments around the neck are twisted.{n}Using her power like this was clearly a bad idea.{s}",
+                "narrator": "{i}Her bones and ligaments around the neck are twisted.{n}Using her power like this was clearly a bad idea.{s}",
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Use the lunarian scanner",
-                "text": "{i}The damage you did actually helped a bit.{n}Now you should be able to operate her.{s}",
+                "narrator": "{i}The damage you did actually helped a bit.{n}Now you should be able to operate her.{s}",
                 "symptoms": -1
             }
         ]
@@ -50,7 +50,7 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Punch her head back into place",
-                "text": "{i}You punch her hard and hear a loud crack.{n}Congratulations, you fractured the bones !{s}",
+                "narrator": "{i}You punch her hard and hear a loud crack.{n}Congratulations, you fractured the bones !{s}",
                 "symptoms": -1,
                 "sickness": 20
             }
@@ -66,7 +66,7 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Operate her",
-                "text": "{i}It takes you a few hours in the block,{n}but you manage to put back most of her bones in the right place{s}",
+                "narrator": "{i}It takes you a few hours in the block,{n}but you manage to put back most of her bones in the right place{s}",
                 "sickness": -100
             }
         ]
