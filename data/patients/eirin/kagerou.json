@@ -1,45 +1,63 @@
 {
     "name": "Nameless",
     "init": {
-        "thirst": 20,
-        "hunger": 20,
-        "unconsciousness": 0,
-        "intoxication": 0,
-        "pain": 20,
-        "sickness": 20,
-        "sadness": 20
+        "unconsciousness": 1,
+        "sickness": 40,
+        "symptoms": 2
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "I haven't slept in days. Or nights, for the matter."
-            }
-        ],
+    "hello": {
+        "text": "I haven't slept in days. Or nights, for the matter."
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": " I just told you. I've been clawing at my fur for ages but it still bites.",
+                "symptoms": -1
             }
         ],
         "what": [
             {
-                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack",
+                "name": "What happened recently ?",
+                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack"
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
+                "nbSymptomsNeeded": 1,
+                "name": "Check out her skin",
                 "text": "{i}You notice packs of skin without fur, as well as a few bugs here and there.{s}",
+                "symptoms": -1
             }
-        ],
+        ]
+    },
+    "actions": {
         "prosthesis": [
             {
+                "nbSymptomsNeeded": 0,
+                "name": "Give her a cone",
                 "text": "This cone should avoid her scratching too much, but she looks annoyed at the idea",
-                "sickness": -20
+                "sickness": -30
+            },
+            {
+                "name": "Give her a prosthesis",
+                "text": "{i}You lose precious time making plans for a useless contraption. It looks like her state has worsen meanwhile...{s}",
+                "sickness": 20
             }
         ],
         "medicine": [
             {
+                "nbSymptomsNeeded": 0,
+                "name": "Give her a vermifuge",
                 "text": "Ah, thank you. I can already hear them stop bugging me.",
-                "sickness": -60
+                "sickness": -30
+            },
+            {
+                "name": "Give her some coffee",
+                "text": "You give her some coffee to wake her up. At least she isn't drowsy anymore.",
+                "unconsciousness": 0
             }
         ]
     }
