@@ -1,5 +1,5 @@
 {
-    "name": "Nameless",
+    "name": "Kagerou",
     "init": {
         "sickness": 40,
         "symptoms": 3
@@ -55,7 +55,7 @@
             },
             {
                 "name": "Give her some coffee",
-                "text": "You give her some coffee to wake her up. Now she isn't drowsy anymore.",
+                "text": "{i}You give her some coffee to wake her up. Now she isn't drowsy anymore.{s}",
                 "symptoms": -1
             }
         ]

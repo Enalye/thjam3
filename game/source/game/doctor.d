@@ -18,7 +18,7 @@ final class Doctor {
     }
 
     Patient getNextPatient() {
-        _patientId ++;
+        _patientId++;
         if(_patientId >= _patients.length) {
             writeln("victory");
             onMainMenu();

@@ -114,6 +114,11 @@ class SceneGui: GuiElement {
         default:
             break;
         }
+
+        if(_patient.isHealedUp()) {
+            // TODO: sound and effects
+            _patient = _doctor.getNextPatient();
+        }
     }
 }
 

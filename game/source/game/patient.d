@@ -38,6 +38,7 @@ class Patient {
         if(newState != _state) {
             // TODO: Play the new animation and dialog.
         }
+
         _state = newState;
     }
 
@@ -58,6 +59,8 @@ class Patient {
         _intoxication += getJsonInt(node, "intoxication", 0);
         _sickness += getJsonInt(node, "sickness", 0);
         _symptoms += getJsonInt(node, "symptoms", 0);
+
+        writeln("Symptom counter is ", _symptoms);
 
         processState();
         return txt;
@@ -82,6 +85,10 @@ class Patient {
         if(txt.length && dialogGui !is null) {
             dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
         }
+    }
+
+    bool isHealedUp() {
+        return _sickness <= 0;
     }
 
     private Tuple!(string, string)[] getList(string id) {
