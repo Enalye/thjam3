@@ -20,6 +20,7 @@ class MainButton: Button {
     }
 
     override void draw() {
+        _sprite.color = isLocked ? Color(.3f, .6f, .6f) : Color.white;
         _sprite.draw(center);
     }
 }
@@ -48,6 +49,8 @@ class SceneGui: GuiElement {
     Patient     _patient;
     Doctor      _doctor;
 
+    MainButton _talksBtn, _observationsBtn, _actionsBtn;
+
     this(string doctorName) {
         dialogGui = new DialogGui;
         size(screenSize);
@@ -56,17 +59,17 @@ class SceneGui: GuiElement {
         box.setAlign(GuiAlignX.Right, GuiAlignY.Center);
         addChildGui(box);
         {
-            auto talksBtn = new MainButton("Talk");
-            talksBtn.setCallback(this, "talk");
-            box.addChildGui(talksBtn);
+            _talksBtn = new MainButton("Talk");
+            _talksBtn.setCallback(this, "talk");
+            box.addChildGui(_talksBtn);
 
-            auto observationsBtn = new MainButton("Observe");
-            observationsBtn.setCallback(this, "observe");
-            box.addChildGui(observationsBtn);
+            _observationsBtn = new MainButton("Observe");
+            _observationsBtn.setCallback(this, "observe");
+            box.addChildGui(_observationsBtn);
 
-            auto actionsBtn = new MainButton("Actions");
-            actionsBtn.setCallback(this, "action");
-            box.addChildGui(actionsBtn);
+            _actionsBtn = new MainButton("Actions");
+            _actionsBtn.setCallback(this, "action");
+            box.addChildGui(_actionsBtn);
         }
 
         auto menuBtn = new MenuButton("Menu");
@@ -124,6 +127,10 @@ class SceneGui: GuiElement {
             writeln("YOU DIED");
             onMainMenu();
         }
+
+        _talksBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
+        _observationsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
+        _actionsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
 
         if(_patient.isHealedUp() && dialogGui.isOver()) {
             // TODO: sound and effects
