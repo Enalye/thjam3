@@ -69,7 +69,7 @@ class MouthGui: GuiElement {
     }
 
     override void draw() {
-        if(dialogGui.isOver())
+        if(dialogGui.isOver() || !dialogGui.isCharacterSpeaking())
             mouthAnim.draw(0, center);
         else
             mouthAnim.draw(uniform(0, mouthAnim.columns), center);
