@@ -44,7 +44,7 @@
                 "narrator": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
                 "symptoms": -10,
                 "sickness": 20
-            },
+            }
         ]
     },
     "observations": {
@@ -66,7 +66,10 @@
         ],
         "analyze": [
             {
-                "nbSymptomsNeeded": 
+                "nbSymptomsNeeded": 5,
+                "name": "Analyze her eye closely",
+                "narrator": "{i}You notice fur stuck on her eyelid.{n}Her retina also seem to have suffer some damage{s}",
+                "symptoms": -1
             }
         ]
     },
@@ -93,7 +96,7 @@
             {
                 "name": "Kick the eye",
                 "text": "Sister, I'm pretty sure this won't help.{n}I really wonder what you're thinking some times.",
-                "sickness": 10,
+                "sickness": 10
             }
         ],
         "prosthesis": [
@@ -102,7 +105,7 @@
                 "name": "Try to find something to patch her up",
                 "narrator": "{i}Looking into your trinkets, you find an adaptative Kappa lense.{n}The lucky find should help with Satori's sight.",
                 "sickness": -100,
-                "symptoms": -1,
+                "symptoms": -1
             }
         ]
     }

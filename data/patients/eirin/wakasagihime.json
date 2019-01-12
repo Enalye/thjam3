@@ -37,7 +37,7 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Perform a usual checkup.",
-                "text": "{i}Her scales are very dry.{s}",
+                "narrator": "{i}Her scales are very dry.{s}",
                 "symptoms": -1
             }
         ]
