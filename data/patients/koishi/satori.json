@@ -1,55 +1,108 @@
 {
     "name": "Satori",
     "init": {
-        "thirst": 20,
-        "hunger": 20,
         "unconsciousness": 1,
-        "intoxication": 0,
-        "pain": 20,
         "sickness": 75,
-        "sadness": 20
+        "symptoms": 15
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "I think I have a problem, sister. Usually I can read minds pretty well, but lately this has proven to be harder and harder."
-            }
-        ],
+    "hello": {
+        "text": "I think I have a problem, sister. Usually I can read minds pretty well...{n}Well, except from yours. But lately this has proven to be harder and harder."
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": "Sleepy. Actually, I have felt drained out for ages now."
             }
         ],
         "what": [
             {
-                "text": "Well, I have been playing with Rin quite a lot yesterday."
+                "nbSymptomsNeeded": 15,
+                "name": "Did you do anything out of the usual ?",
+                "text": "Well, I have been playing with Rin quite a lot yesterday.",
+                "symptoms": -1
+            },
+            {
+                "nbSymptomsNeeded": 12,
+                "name": "Ask her if she sneezes in the presence of Rin.",
+                "text": "Yes, but you do it all the time as well.{n}Isn't this normal ?",
+                "symptoms": -1
             }
         ],
+        "cheer": [
+            {
+                "nbSymptomsNeeded": 9,
+                "name": "Cheer her up by agitating your arms",
+                "text": "{i}It always manages to lighten up her mood.{n}She is less tense already{s}",
+                "symptoms": -5,
+                "sickness": -25
+            }
+        ],
+        "cat": [
+            {
+                "name": "Call rin to play",
+                "text": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
+                "symptoms": -10,
+                "sickness": 20
+            },
+        ]
+    },
+    "observations": {
         "check": [
             {
-                "text": "{i}You notice her third eye is bloated, and abnormally red.{s}"
+                "nbSymptomsNeeded": 14,
+                "name": "Check her eye",
+                "text": "{i}You notice her third eye is bloated, and abnormally red.{s}",
+                "symptoms": -1
             }
         ],
         "mindread": [
             {
-                "text": "You feel a burning eye. It stings."
+                "nbSymptomsNeeded": 13,
+                "name": "Try to read her subconscious",
+                "text": "{i}You feel a burning eye. You see sea of flammes.{s}",
+                "symptoms": -4
+            }
+        ],
+        "analyze": [
+            {
+                "nbSymptomsNeeded": 
+            }
+        ]
+    },
+    "actions": {
+        "silly": [
+            {
+                "nbSymptomsNeeded": 3,
+                "name": "Attach wings to the third eye",
+                "text": "{i}The third eye now became an evil eye.{n}It cries bloody tears.{n}This is painful but it gets less bloated in the end.{s}",
+                "symptoms": -3,
+                "sickness": 50
             }
         ],
         "operate": [
             {
-                "text": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns. After only a few minutes, you manage to extract fur from inside the eye. Looks like is still pretty damaged though{s}",
-                "sickness": -50
+                "nbSymptomsNeeded": 4,
+                "name": "Operate her eye",
+                "text": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though{s}",
+                "sickness": -25,
+                "symptoms": -1
             }
         ],
         "punch": [
             {
-                "text": "Sister, I'm pretty sure this won't help. I really wonder what you're thinking some times."
+                "name": "Kick the eye",
+                "text": "Sister, I'm pretty sure this won't help.{n}I really wonder what you're thinking some times.",
+                "sickness": 10,
             }
         ],
         "prosthesis": [
             {
-                "text": "{i}Looking into your trinkets, you find an adaptative Kappa lense. The lucky find should help with Satori's sight",
-                "sickness": -25
+                "nbSymptomsNeeded": 0,
+                "name": "Try to find something to patch her up",
+                "text": "{i}Looking into your trinkets, you find an adaptative Kappa lense.{n}The lucky find should help with Satori's sight.",
+                "sickness": -100,
+                "symptoms": -1,
             }
         ]
     }
