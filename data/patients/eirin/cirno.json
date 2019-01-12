@@ -6,28 +6,28 @@
         "symptoms": 2
     },
     "hello": {
-        "text": "I am the strongest ! But I still need a doctor once in a while..."
+        "text": "I am the strongest !{n}But I still need a doctor once in a while..."
     },
     "talks": {
         "how": [
             {
                 "name": "How are you feeling ?",
-                "text": "I don't know what to say. I've never experienced something like this."
+                "text": "I don't know what to say.{n}I've never experienced something like this."
             },
             {
                 "name": "What do you mean ?",
-                "text": "I can't stop sneezing but it's not because of the flowers. I froze most I could find.",
+                "text": "I can't stop sneezing but it's not because of the flowers.{n}I froze most I could find.",
                 "symptoms": -1
             }
         ],
         "what": [
             {
                 "name": "What happened recently ?",
-                "text": "I have been playing quite a lot. Freezing frogs, fairies, humans even."
+                "text": "I have been playing quite a lot.{n}Freezing frogs, fairies, humans even."
             },
             {
                 "name": "Nothing else ?",
-                "text": "Then Letty came up and we began using our powers together. Maybe that was a bit too much, we froze most of the lake."
+                "text": "Then Letty came up and we began using our powers together.{n}Maybe that was a bit too much, we froze most of the lake."
             }
         ]
     },
@@ -49,7 +49,7 @@
         "temperature": [
             {
                 "name": "Take her temperature.",
-                "text": "{i}She is cold. Actually, surprisingly cold, even for an ice fairy !{s}",
+                "text": "{i}She is cold.{n}Actually, surprisingly cold, even for an ice fairy !{s}",
                 "symptoms": -1
             }
         ]
@@ -58,7 +58,7 @@
         "painkillers": [
             {
                 "name": "Give her painkillers.",
-                "text": "{i}Pretty bad idea. She begins shivering and collapses.{s}",
+                "text": "{i}Pretty bad idea.{n}She begins shivering and collapses.{s}",
                 "unconsciousness": "2"
             }
         ],
@@ -66,12 +66,12 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Give her some hot cocoa.",
-                "text": "{i}Her temperature stabilizes. Looks like it was a good idea !{s}",
+                "text": "{i}Her temperature stabilizes.{n}Looks like it was a good idea !{s}",
                 "sickness": -60
             },
             {
                 "name": "Give her some medicine",
-                "text": "{i}You don't really know what to give her so you try a placebo. It's not very effective...{s}"
+                "text": "{i}You don't really know what to give her so you try a placebo.{n}It's not very effective...{s}"
             }
         ]
     }

@@ -5,29 +5,30 @@
         "symptoms": 3
     },
     "hello": {
-        "text": "Good morning. Sorry to bother you, but there is something getting to my head."
+        "text": "Good morning. Sorry to bother you,{n}but there is something getting to my head."
     },
     "talks": {
         "how": [
             {
+                "nbSymptomsNeeded": 3,
                 "name": "How are you feeling ?",
-                "text": "I'm loosing it ! My head. Literally.",
+                "text": "I'm loosing it !{n}My head. Literally.",
                 "symptoms": -1
             },
             {
                 "name": "What do you mean, your head ?",
-                "text": "I can't move it as I should, it just drops like a dead weight."
+                "text": "I can't move it as I should,{n}it just drops like a dead weight."
             }
         ],
         "what": [
             {
+                "nbSymptomsNeeded": 3,
                 "name": "What in the name of Chang'e happened to you ?",
                 "text": "I would shrug if I could, nothing much."
             },
             {
-                "nbSymptomsNeeded": 2,
-                "name": "What in the name of Chang'e happened to your head ?",
-                "text": "I was heading to the human village when my head suddenly stopped floating.",
+                "name": "What happened to your head ?",
+                "text": "I was heading to the human village{n}when my head suddenly stopped floating.",
                 "symptoms": -1
             }          
         ]
@@ -36,22 +37,22 @@
         "check": [
             {
                 "name": "Check her shoulders.",
-                "text": "{i}She shivers as you touch her shoulders. Looks like she's in pain but doesn't want to admit it.{s}"
+                "text": "{i}She shivers as you touch her shoulders.{n}Looks like she's in pain but doesn't want to admit it.{s}"
             }
         ]
     },
     "actions": {
         "manual": [
             {
-                "name": "Attach her head back.",
                 "nbSymptomsNeeded": 1,
-                "text": "{i}You try attaching her head back but it falls on the ground.{s}",
+                "name": "Attach her head back.",
+                "text": "{i}You try attaching her head back{n}but it falls on the ground.{s}",
                 "sickness": 20
             },
             {
-                "name": "Attach her head back.",
                 "nbSymptomsNeeded": 0,
-                "text": "{i}You put Sekibanki's head on the prosthesis you made for her. Looks like she'll need to keep it for a while.{s}",
+                "name": "Attach her head back.",
+                "text": "{i}You put Sekibanki's head on the prosthesis you made for her.{n}Looks like she'll need to keep it for a while.{s}",
                 "sickness": -20
             }
         ],
@@ -64,8 +65,9 @@
         ],
         "prosthesis": [
             {
+                "nbSymptomsNeeded": 1,
                 "name": "Make a prosthesis to keep her head in place.",
-                "text": "{i}This should keep her head in place while she recovers.{s}",
+                "text": "{i}This should keep her head{n}in place while she recovers.{s}",
                 "sickness": -60,
                 "symptoms": -1
             }

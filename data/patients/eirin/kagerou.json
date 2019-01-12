@@ -5,14 +5,14 @@
         "symptoms": 3
     },
     "hello": {
-        "text": "I haven't slept in days. Or nights, for the matter."
+        "text": "I haven't slept in days.{n}Or nights, for the matter."
     },
     "talks": {
         "how": [
             {
                 "nbSymptomsNeeded": 3,
                 "name": "How are you feeling ?",
-                "text": "I just told you. I've been clawing at my fur for ages but it still bites.",
+                "text": "I just told you.{n}I've been clawing at my fur for ages but it still bites.",
                 "symptoms": -1
             },
             {
@@ -23,7 +23,11 @@
         "what": [
             {
                 "name": "What happened recently ?",
-                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack."
+                "text": "I've been hunting in farms near the human village.{n}Last time I slept was there, in a haystack."
+            },
+            {
+                "name": "Anything else ?",
+                "text": "Well, nothing else unsual."
             }
         ]
     },
@@ -32,7 +36,7 @@
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Check out her skin",
-                "text": "{i}You notice packs of skin without fur, as well as a few bugs here and there.{s}",
+                "text": "{i}You notice packs of skin without fur,{n}as well as a few bugs here and there.{s}",
                 "symptoms": -1
             }
         ]
@@ -42,12 +46,12 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Give her a cone",
-                "text": "This cone should avoid her scratching too much, but she looks annoyed at the idea",
+                "text": "This cone should avoid her scratching too much,{n}but she looks annoyed at the idea",
                 "sickness": -30
             },
             {
                 "name": "Give her a prosthesis",
-                "text": "{i}You lose precious time making plans for a useless contraption. It looks like her state has worsen meanwhile...{s}",
+                "text": "{i}You lose precious time making plans for a useless contraption.{n}It looks like her state has worsen meanwhile...{s}",
                 "sickness": 20
             }
         ],
@@ -55,13 +59,13 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Give her a vermifuge",
-                "text": "Ah, thank you. I can already hear them stop bugging me.",
+                "text": "Ah, thank you.{n}I can already hear them stop bugging me.",
                 "sickness": -30
             },
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Give her some coffee",
-                "text": "{i}You give her some coffee to wake her up. Now she isn't drowsy anymore.{s}",
+                "text": "{i}You give her some coffee to wake her up.{n}Now she isn't drowsy anymore.{s}",
                 "symptoms": -1
             }
         ]

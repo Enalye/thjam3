@@ -5,24 +5,24 @@
         "symptoms": 4
     },
     "hello": {
-        "text": "Hello doctor Yagokoro. I don't feel so good."
+        "text": "Hello doctor Yagokoro.{n}I don't feel so good."
     },
     "talks": {
         "how": [
             {
                 "name": "How are you feeling ?",
-                "text": "Drained out. I have a big headache since this morning as well."
+                "text": "Drained out.{n}I have a big headache since this morning as well."
             },
             {
                 "name": "Did you drink anything weird ?",
-                "text": "No, I didn't drink anything weird. Quite the opposite actually."
+                "text": "No, I didn't drink anything weird.{n}Quite the opposite actually."
             }
         ],
         "what": [
             {
                 "nbSymptomsNeeded": 4,
                 "name": "What happened to you ?",
-                "text": "I have been swimming in the part of the lake near the geysers. The water is surprisingly salty there.",
+                "text": "I have been swimming in the part of the lake near the geysers.{n}The water is surprisingly salty there.",
                 "symptoms": -1
             },
             {
@@ -37,7 +37,7 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Perform a usual checkup.",
-                "text": "{i}Her scales are very dry{s}",
+                "text": "{i}Her scales are very dry.{s}",
                 "symptoms": -1
             }
         ]
@@ -54,14 +54,14 @@
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Give her some water.",
-                "text": "Ah, thanks, this is revitalizing. More please !",
+                "text": "Ah, thanks, this is revitalizing.{n}More please !",
                 "sickness": -10,
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Make her take a bath",
-                "text": "I really needed this, thanks. Must have really been dehydrated.",
+                "text": "I really needed this, thanks.{n}Must have really been dehydrated.",
                 "sickness": -50
             }
         ]

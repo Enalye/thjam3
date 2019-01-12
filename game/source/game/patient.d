@@ -64,9 +64,9 @@ class Patient {
         _symptoms        = max(0, _symptoms + getJsonInt(node, "symptoms", 0));
 
         writeln("----------------------------");
-        writeln("Unconsciousness counter is ", _unconsciousness);
-        writeln("Symptom counter is ", _symptoms);
-        writeln("Sickness counter is ", _sickness);
+        writeln("Unconsciousness | ", _unconsciousness);
+        writeln("Symptom         | ", _symptoms);
+        writeln("Sickness        | ", _sickness);
         writeln("----------------------------");
 
         processState();
