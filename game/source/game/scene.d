@@ -82,17 +82,17 @@ class SceneGui: GuiElement {
     override void onCallback(string id) {
         switch(id) {
         case "talk":
-            auto modal = new TalkGui(_doctor.getTalkList());
+            auto modal = new TalkGui(_patient.getTalkList());
             modal.setCallback(this, "modal.talk");
             setModalGui(modal);
             break;
         case "observe":
-            auto modal = new ObserveGui(_doctor.getObservationList());
+            auto modal = new ObserveGui(_patient.getObservationList());
             modal.setCallback(this, "modal.observe");
             setModalGui(modal);
             break;
         case "action":
-            auto modal = new ActionGui(_doctor.getActionList());
+            auto modal = new ActionGui(_patient.getActionList());
             modal.setCallback(this, "modal.action");
             setModalGui(modal);
             break;
