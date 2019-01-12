@@ -1,38 +1,8 @@
 {
     "id": "eirin",
     "name": "Eirin",
-    "actions": [
-        {
-            "id": "water",
-            "name": "Give water"
-        },
-        {
-            "id": "food",
-            "name": "Feed"
-        }
-    ],
-    "talks": [
-        {
-            "id": "how",
-            "name": "How are you ?"
-        },
-        {
-            "id": "what",
-            "name": "What happened recently ?"
-        }
-    ],
-    "observations": [
-        {
-            "id": "check",
-            "name": "Check"
-        }
-    ],
     "patients": [
         "cirno",
-        "wakasagihime",
-        "sekibanki",
-        "tsukumos",
-        "seija",
-        "youmu"
+        "kagerou"
     ]
 }

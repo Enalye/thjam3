@@ -1,63 +1,77 @@
 {
     "name": "Cirno",
     "init": {
-        "thirst": 20,
-        "hunger": 50,
         "unconsciousness": 1,
-        "intoxication": 0,
-        "pain": 60,
-        "sickness": 70,
-        "sadness": 80
+        "sickness": 60,
+        "symptoms": 2
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "I am the strongest ! But I still need a doctor once in a while..."
-            }
-        ],
+    "hello": {
+        "text": "I am the strongest ! But I still need a doctor once in a while..."
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": "I don't know what to say. I've never experienced something like this."
             },
             {
-                "text": "I can't stop sneezing but it's not because of the flowers. I froze most I could find."
+                "name": "What do you mean ?",
+                "text": "I can't stop sneezing but it's not because of the flowers. I froze most I could find.",
+                "symptoms": -1
             }
         ],
         "what": [
             {
+                "name": "What happened recently ?",
                 "text": "I have been playing quite a lot. Freezing frogs, fairies, humans even"
             },
             {
+                "name": "Nothing else ?",
                 "text": "Then Letty came up and we began using our powers together. Maybe that was a bit too much, we froze most of the lake."
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
+                "name": "Checkout her skin.",
                 "text": "{i}As you touch her, you get frozen.{s}",
-                "sickness": 30
+                "sickness": 40
             }
         ],
         "scanner": [
             {
-                "text": "{i}Looks like ice crystals are forming inside her body.{s}"
+                "name": "Use the lunarian scanner.",
+                "text": "{i}Looks like ice crystals are forming inside her body.{s}",
+                "symptoms": -1
             }
         ],
         "temperature": [
             {
-                "text": "{i}She is cold. Actually, surprisingly cold, even for an ice fairy !{s}"
+                "name": "Take her temperature.",
+                "text": "{i}She is cold. Actually, surprisingly cold, even for an ice fairy !{s}",
+                "symptoms": -1
             }
-        ],
+        ]
+    },
+    "actions": {
         "painkillers": [
             {
+                "name": "Give her painkillers.",
                 "text": "{i}Pretty bad idea. She begins shivering and collapses.{s}",
-                "unconsciousness": "2",
-                "sickness": 30
+                "unconsciousness": "2"
             }
         ],
         "medicine": [
             {
+                "nbSymptomsNeeded": 0,
+                "name": "Give her some hot cocoa",
                 "text": "{i}Her temperature stabilizes. Looks like it was a good idea !{s}",
-                "sickness": -100
+                "sickness": -60
+            },
+            {
+                "name": "Give her some medicine",
+                "text": "{i}You don't really know what to give her so you try a placebo. It's not very effective...{s}"
             }
         ]
     }
