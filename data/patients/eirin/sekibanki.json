@@ -37,7 +37,7 @@
         "check": [
             {
                 "name": "Check her shoulders.",
-                "text": "{i}She shivers as you touch her shoulders.{n}Looks like she's in pain but doesn't want to admit it.{s}"
+                "narrator": "{i}She shivers as you touch her shoulders.{n}Looks like she's in pain but doesn't want to admit it.{s}"
             }
         ]
     },
@@ -46,13 +46,13 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Attach her head back.",
-                "text": "{i}You try attaching her head back{n}but it falls on the ground.{s}",
+                "narrator": "{i}You try attaching her head back{n}but it falls on the ground.{s}",
                 "sickness": 20
             },
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Attach her head back.",
-                "text": "{i}You put Sekibanki's head on the prosthesis you made for her.{n}Looks like she'll need to keep it for a while.{s}",
+                "narrator": "{i}You put Sekibanki's head on the prosthesis you made for her.{n}Looks like she'll need to keep it for a while.{s}",
                 "sickness": -20
             }
         ],
@@ -67,7 +67,7 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Make a prosthesis to keep her head in place.",
-                "text": "{i}This should keep her head{n}in place while she recovers.{s}",
+                "narrator": "{i}This should keep her head{n}in place while she recovers.{s}",
                 "sickness": -60,
                 "symptoms": -1
             }

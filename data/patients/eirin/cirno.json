@@ -35,21 +35,21 @@
         "check": [
             {
                 "name": "Checkout her skin.",
-                "text": "{i}As you touch her, you get frozen.{s}",
+                "narrator": "{i}As you touch her, you get frozen.{s}",
                 "sickness": 40
             }
         ],
         "scanner": [
             {
                 "name": "Use the lunarian scanner.",
-                "text": "{i}Looks like ice crystals are forming inside her body.{s}",
+                "narrator": "{i}Looks like ice crystals are forming inside her body.{s}",
                 "symptoms": -1
             }
         ],
         "temperature": [
             {
                 "name": "Take her temperature.",
-                "text": "{i}She is cold.{n}Actually, surprisingly cold, even for an ice fairy !{s}",
+                "narrator": "{i}She is cold.{n}Actually, surprisingly cold, even for an ice fairy !{s}",
                 "symptoms": -1
             }
         ]
@@ -58,7 +58,7 @@
         "painkillers": [
             {
                 "name": "Give her painkillers.",
-                "text": "{i}Pretty bad idea.{n}She begins shivering and collapses.{s}",
+                "narrator": "{i}Pretty bad idea.{n}She begins shivering and collapses.{s}",
                 "unconsciousness": "2"
             }
         ],
@@ -66,12 +66,12 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Give her some hot cocoa.",
-                "text": "{i}Her temperature stabilizes.{n}Looks like it was a good idea !{s}",
+                "narrator": "{i}Her temperature stabilizes.{n}Looks like it was a good idea !{s}",
                 "sickness": -60
             },
             {
                 "name": "Give her some medicine",
-                "text": "{i}You don't really know what to give her so you try a placebo.{n}It's not very effective...{s}"
+                "narrator": "{i}You don't really know what to give her so you try a placebo.{n}It's not very effective...{s}"
             }
         ]
     }

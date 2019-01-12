@@ -12,7 +12,7 @@
             {
                 "nbSymptomsNeeded": 5,
                 "name": "How are you feeling ?",
-                "text": "{i}They are asleep.{n}You need to wake them up first.{s}"
+                "narrator": "{i}They are asleep.{n}You need to wake them up first.{s}"
             },
             {
                 "nbSymptomsNeeded": 2,
@@ -29,7 +29,7 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Raiko came back. Ask her what happened.",
-                "text": "{i}She tells you she was having too much fun drumming.{n}She must have electrocuted them by mistake.{s}",
+                "narrator": "{i}She tells you she was having too much fun drumming.{n}She must have electrocuted them by mistake.{s}",
                 "symptoms": -1
             }
         ]
@@ -47,7 +47,7 @@
             {
                 "nbSymptomsNeeded": 4,
                 "name": "Use the lunarian scanner.",
-                "text": "{i}Nothing broken but you can find out the damage traces a line,{n}as if something traversed their body.{s}",
+                "narrator": "{i}Nothing broken but you can find out the damage traces a line,{n}as if something traversed their body.{s}",
                 "symptoms": -1
             }
         ]
@@ -57,14 +57,14 @@
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Give them some painkillers.",
-                "text": "{i}This should calm them down and make it less painful.{s}",
+                "narrator": "{i}This should calm them down and make it less painful.{s}",
                 "sickness": -50,
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Give them some painkillers.",
-                "text": "{i}You've already given them some.{n}Some more could be a bad idea seeing their state.{s}",
+                "narrator": "{i}You've already given them some.{n}Some more could be a bad idea seeing their state.{s}",
                 "symptoms": -1
             }
         ],
@@ -72,14 +72,14 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Give them a cure-all",
-                "text": "{i}The medicine begins to kick in and wakes them up.{s}",
+                "narrator": "{i}The medicine begins to kick in and wakes them up.{s}",
                 "sickness": -30,
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Give them treatment for the electrocution",
-                "text": "{i}They seem to respond well to the treatment.{s}",
+                "narrator": "{i}They seem to respond well to the treatment.{s}",
                 "sickness": -20
             }
         ]
