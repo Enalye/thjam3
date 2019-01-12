@@ -23,7 +23,7 @@
         "what": [
             {
                 "name": "What happened recently ?",
-                "text": "I have been playing quite a lot. Freezing frogs, fairies, humans even"
+                "text": "I have been playing quite a lot. Freezing frogs, fairies, humans even."
             },
             {
                 "name": "Nothing else ?",
@@ -65,7 +65,7 @@
         "medicine": [
             {
                 "nbSymptomsNeeded": 0,
-                "name": "Give her some hot cocoa",
+                "name": "Give her some hot cocoa.",
                 "text": "{i}Her temperature stabilizes. Looks like it was a good idea !{s}",
                 "sickness": -60
             },
