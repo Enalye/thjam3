@@ -22,7 +22,10 @@ final class Doctor {
         if(_patientId >= _patients.length) {
             writeln("victory");
             onMainMenu();
+            return null;
         }
-        return new Patient("data/patients/" ~ getJsonStr(_json, "id") ~ "/" ~ _patients[_patientId] ~ ".json");
+        else {
+            return new Patient("data/patients/" ~ getJsonStr(_json, "id") ~ "/" ~ _patients[_patientId] ~ ".json");
+        }
     }
 }

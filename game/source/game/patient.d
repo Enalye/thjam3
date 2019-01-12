@@ -28,6 +28,11 @@ class Patient {
         _intoxication = getJsonInt(node, "intoxication", 0);
         _sickness = getJsonInt(node, "sickness", 0);
         _symptoms = getJsonInt(node, "symptoms", 0);
+
+        if(!hasJson(_json, "hello")) {
+            auto hello = getJson(_json, "hello");
+            dialogGui.setNewDialog(getJsonStr(_json, "name"), getJsonStr(hello, "text"));
+        }
     }
 
     // Calculate the current state of the patient according to the patient's values
