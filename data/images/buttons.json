@@ -1,1 +1,1 @@
-{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":202,"w":202,"x":40,"y":16},"name":"menu_circle","type":"sprite"},{"clip":{"h":54,"w":265,"x":20,"y":240},"name":"menu_rect","type":"sprite"}],"texture":"media\/gui\/buttons.png"}
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":202,"w":202,"x":40,"y":16},"name":"menu_circle","type":"sprite"},{"clip":{"h":54,"w":265,"x":20,"y":240},"name":"menu_rect","type":"sprite"},{"bottom":40,"clip":{"h":128,"w":128,"x":384,"y":0},"left":40,"name":"bubble","right":40,"top":40,"type":"ninepatch"}],"texture":"media\/gui\/buttons.png"}
