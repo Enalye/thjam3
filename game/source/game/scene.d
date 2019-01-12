@@ -2,7 +2,7 @@ module game.scene;
 
 import std.typecons;
 import atelier;
-import game.patient, game.doctor, game.menu, game.dialog;
+import game.patient, game.doctor, game.menu, game.dialog, game.patient_gui;
 
 class MainButton: Button {
     private {
@@ -46,6 +46,7 @@ class MenuButton: Button {
 }
 
 class SceneGui: GuiElement {
+    PatientGui  _patientGui;
     Patient     _patient;
     Doctor      _doctor;
 
@@ -53,6 +54,8 @@ class SceneGui: GuiElement {
 
     this(string doctorName) {
         dialogGui = new DialogGui;
+        _patientGui = new PatientGui;
+
         size(screenSize);
 
         auto box = new VContainer;
@@ -82,6 +85,7 @@ class SceneGui: GuiElement {
             return;
 
         addChildGui(dialogGui);
+        addChildGui(_patientGui);
     }
 
     override void onCallback(string id) {
