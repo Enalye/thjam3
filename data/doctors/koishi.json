@@ -1,6 +1,6 @@
 {
-    "id": "eirin",
-    "name": "Eirin",
+    "id": "koishi",
+    "name": "Koishi",
     "actions": [
         {
             "id": "water",
@@ -28,11 +28,6 @@
         }
     ],
     "patients": [
-        "cirno",
-        "wakasagihime",
-        "sekibanki",
-        "tsukumos",
-        "seija",
-        "youmu"
+        "yuuka"
     ]
 }

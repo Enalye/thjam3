@@ -13,6 +13,7 @@ class DialogGui: GuiElement {
         Timer _timer, _timer2;
         int _characterId;
         string _newMsg;
+        VContainer _box;
     }
 
     this() {
@@ -20,15 +21,13 @@ class DialogGui: GuiElement {
         position(Vec2f(150f, 50f));
         setAlign(GuiAlignX.Right, GuiAlignY.Top);
 
-        auto box = new VContainer;
-        box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
-        addChildGui(box);
+        _box = new VContainer;
+        _box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
+        addChildGui(_box);
 
         _name = new Text("");
-        box.addChildGui(_name);
 
         _msg = new Text("");
-        box.addChildGui(_msg);
         _bubble = fetch!NinePatch("bubble");
         _bubble.size = size;
     }
@@ -37,7 +36,7 @@ class DialogGui: GuiElement {
         _name.text = name;
         _msg.text = msg;
         _originalSize = _bubble.size;
-        _newSize = _msg.size + Vec2f(80f, 80f);
+        _newSize = _msg.size + Vec2f(32f, 32f);
         _msg.text = " ";
         _msg.text = "";
         _timer.start(1f);
@@ -50,6 +49,13 @@ class DialogGui: GuiElement {
         _timer.update(deltaTime);
         _timer2.update(deltaTime);
         _bubble.size = _originalSize.lerp(_newSize, easeOutBounce(_timer.time));
+
+        _box.removeChildrenGuis();
+        if(_name.text.length > 2) {
+            _box.addChildGui(_name);
+        }
+
+        _box.addChildGui(_msg);
 
         if(_characterId < _newMsg.length && !_timer2.isRunning) {
             if(_newMsg[_characterId] == '{') {
