@@ -1,0 +1,1 @@
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":170,"w":150,"x":19,"y":164},"name":"test_head","type":"sprite"},{"clip":{"h":358,"w":232,"x":247,"y":3},"name":"test_body","type":"sprite"},{"clip":{"h":69,"w":89,"x":0,"y":441},"columns":4,"lines":1,"maxtiles":0,"name":"test_mouth","type":"tileset"}],"texture":"media\/character\/test.png"}
