@@ -11,12 +11,12 @@
         "how": [
             {
                 "name": "How are you feeling ?",
-                "text": "I'm loosing it ! My head. Literally."
+                "text": "I'm loosing it ! My head. Literally.",
+                "symptoms": -1
             },
             {
                 "name": "What do you mean, your head ?",
-                "text": "I can't move it as I should, it just drops like a dead weight.",
-                "symptoms": -1
+                "text": "I can't move it as I should, it just drops like a dead weight."
             }
         ],
         "what": [

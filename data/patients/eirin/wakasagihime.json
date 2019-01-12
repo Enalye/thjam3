@@ -45,9 +45,8 @@
     "actions": {
         "painkillers": [
             {
-                "nbSymptomsNeeded": 2,
                 "name": "Give her painkillers.",
-                "text": "{i}That should really help with my headache, thanks !{s}",
+                "text": "That should really help with my headache, thanks !",
                 "sickness": -40
             }
         ],
@@ -62,8 +61,8 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Make her take a bath",
-                "text": "In a few minutes barely, her scales absorb all the liquid. Must have really been dehydrated.",
-                "thisicknessrst": -50
+                "text": "I really needed this, thanks. Must have really been dehydrated.",
+                "sickness": -50
             }
         ]
     }

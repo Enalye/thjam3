@@ -10,6 +10,7 @@
     "talks": {
         "how": [
             {
+                "nbSymptomsNeeded": 3,
                 "name": "How are you feeling ?",
                 "text": "I just told you. I've been clawing at my fur for ages but it still bites.",
                 "symptoms": -1
