@@ -75,6 +75,10 @@ class DialogGui: GuiElement {
         }
     }
 
+    bool isOver() {
+        return _timer2.time() == 1;
+    }
+
     override void draw() {
         _bubble.draw(center);
     }

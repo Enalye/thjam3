@@ -45,8 +45,8 @@ class MenuButton: Button {
 }
 
 class SceneGui: GuiElement {
-    Patient _patient;
-    Doctor _doctor;
+    Patient     _patient;
+    Doctor      _doctor;
 
     this(string doctorName) {
         dialogGui = new DialogGui;
@@ -117,7 +117,7 @@ class SceneGui: GuiElement {
             break;
         }
 
-        if(_patient.isHealedUp()) {
+        if(_patient.isHealedUp() && dialogGui.isOver()) {
             // TODO: sound and effects
             _patient = _doctor.getNextPatient();
         }

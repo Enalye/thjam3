@@ -18,7 +18,7 @@
         "what": [
             {
                 "name": "What happened recently ?",
-                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack"
+                "text": "I've been hunting in farms near the human village. Last time I slept was there, in a haystack."
             }
         ]
     },
@@ -54,6 +54,7 @@
                 "sickness": -30
             },
             {
+                "nbSymptomsNeeded": 1,
                 "name": "Give her some coffee",
                 "text": "{i}You give her some coffee to wake her up. Now she isn't drowsy anymore.{s}",
                 "symptoms": -1
