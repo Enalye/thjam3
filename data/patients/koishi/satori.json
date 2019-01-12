@@ -1,0 +1,56 @@
+{
+    "name": "Satori",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 1,
+        "intoxication": 0,
+        "pain": 20,
+        "sickness": 75,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "I think I have a problem, sister. Usually I can read minds pretty well, but lately this has proven to be harder and harder."
+            }
+        ],
+        "how": [
+            {
+                "text": "Sleepy. Actually, I have felt drained out for ages now."
+            }
+        ],
+        "what": [
+            {
+                "text": "Well, I have been playing with Rin quite a lot yesterday."
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}You notice her third eye is bloated, and abnormally red.{s}"
+            }
+        ],
+        "mindread": [
+            {
+                "text": "You feel a burning eye. It stings."
+            }
+        ],
+        "operate": [
+            {
+                "text": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns. After only a few minutes, you manage to extract fur from inside the eye. Looks like is still pretty damaged though{s}",
+                "sickness": -50
+            }
+        ],
+        "punch": [
+            {
+                "text": "Sister, I'm pretty sure this won't help. I really wonder what you're thinking some times."
+            }
+        ],
+        "prosthesis": [
+            {
+                "text": "{i}Looking into your trinkets, you find an adaptative Kappa lense. The lucky find should help with Satori's sight",
+                "sickness": -25
+            }
+        ]
+    }
+}
