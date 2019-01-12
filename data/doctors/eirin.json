@@ -15,6 +15,10 @@
         {
             "id": "how",
             "name": "How are you ?"
+        },
+        {
+            "id": "what",
+            "name": "What happened recently ?"
         }
     ],
     "observations": [

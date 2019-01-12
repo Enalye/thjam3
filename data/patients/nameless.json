@@ -30,11 +30,6 @@
                 "text": "{i}You do additional checks but there is nothing else unusual.{s}"
             }
         ],
-        "scanner": [
-            {
-                "text": "{i}You do run the scanner, but every other organ and bone seems to be in their right place.{s}"
-            }
-        ],
         "temperature": [
             {
                 "text": "{i}Their temperature is normal.{s}"
@@ -104,6 +99,16 @@
             {
                 "text": "{i}For some reason, you take your patient to the block and proceed to slice them open. After a while you notice there was nothing wrong but you already made quite a mess...{s}",
                 "sickness": 100
+            }
+        ],
+        "scanner": [
+            {
+                "text": "{i}You do run the scanner, but every other organ and bone seems to be in their right place.{s}"
+            }
+        ],
+        "mindread": [
+            {
+                "text": "Emptyness."
             }
         ]
     }

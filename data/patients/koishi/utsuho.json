@@ -1,0 +1,62 @@
+{
+    "name": "Utsuho",
+    "init": {
+        "thirst": 20,
+        "hunger": 20,
+        "unconsciousness": 1,
+        "intoxication": 0,
+        "pain": 20,
+        "sickness": 80,
+        "sadness": 20
+    },
+    "behaviour": {
+        "hello": [
+            {
+                "text": "Hello, Koishi. I think there is something wrong with me ?"
+            }
+        ],
+        "how": [
+            {
+                "text": "Sleepy. Actually, I have felt drained out for ages now."
+            }
+        ],
+        "what": [
+            {
+                "text": "Well, it's this time of the month again. It is erupting."
+            }
+        ],
+        "check": [
+            {
+                "text": "{i}She sweats, but it looks like the droplets vaporize almost instantaneously. You touch her skin... Ouch ! She's burning{s}"
+            }
+        ],
+        "mindread": [
+            {
+                "text": "You can feel the Yatagarasu. It looks like there is an eruption ongoing."
+            }
+        ],
+        "temperature": [
+            {
+                "text": "She is definitely hotter than usual, that's for sure. Now, you know exactly how cold she needs to get"
+            }
+        ],
+        "operate": [
+            {
+                "text": "{i}You open up Utsuho and try to dislodge the Yatagarasu core from her body. Sadly, before you manage to complete the procedure, her heart stops...{s}",
+                "sickness": 100
+            }
+        ],
+        "punch": [
+            {
+                "text": "Unyuu ?",
+                "sadness": 20
+            }
+        ],
+        "water": [
+            {
+                "text": "You drawn lead Utsuho atop the Geyser, with great pain. The Misty Lake is surprisingly frozen ! That's even better than expected.",
+                "sickness": -80
+            }
+        ]
+    }
+}
