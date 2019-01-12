@@ -15,6 +15,9 @@ final class Doctor {
     this(string name) {
         _json = parseJSON(readText(name));
         _patients = getJsonArrayStr(_json, "patients");
+        auto music = fetch!Music(getJsonStr(_json, "id"));
+        music.isLooped = true;
+        music.play();
     }
 
     Patient getNextPatient() {

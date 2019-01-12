@@ -5,20 +5,20 @@
         "symptoms": 5
     },
     "hello": {
-        "text": "I've been stuck like this for days. Can't revert back to normal anymore."
+        "text": "I've been stuck like this for days.{n}Can't revert back to normal anymore."
     },
     "talks": {
         "how": [
             {
                 "name": "How are you feeling ?",
-                "text": "Angry. Stuck. Can't even walk or fly straight.",
+                "text": "Angry. Stuck.{n}Can't even walk or fly straight."
             }
         ],
         "what": [
             {
                 "nbSymptomsNeeded": 4,
                 "name": "How did you twist your bones like this ?",
-                "text": "I was laughing at Sekibanki and trying to imitate her with my powers. Bad idea",
+                "text": "I was laughing at Sekibanki and trying to imitate her with my powers.{n}Bad idea.",
                 "symptoms": -1
             }
         ]
@@ -27,24 +27,21 @@
         "check": [
             {
                 "name": "Check out her body",
-                "text": "{i}Nothing unusual aside from her face turned backwards.{s}"
+                "text": "{i}Nothing unusual...{n}Aside from her face turned backwards.{s}"
             }
         ],
         "scanner": [
             {
                 "nbSymptomsNeeded": 5,
                 "name": "Use the lunarian scanner",
-                "text": "{i}Her bones and ligaments around the neck are twisted. Using her power like this was clearly a bad idea.{s}",
+                "text": "{i}Her bones and ligaments around the neck are twisted.{n}Using her power like this was clearly a bad idea.{s}",
                 "symptoms": -1
-            }
-        ],
-        "scanner": [
+            },
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Use the lunarian scanner",
-                "text": "{i}The damage you did actually helped a bit. Now you should be able to operate her.{s}",
-                "symptoms": -1,
-                "sickness": 20
+                "text": "{i}The damage you did actually helped a bit.{n}Now you should be able to operate her.{s}",
+                "symptoms": -1
             }
         ]
     },
@@ -53,20 +50,23 @@
             {
                 "nbSymptomsNeeded": 3,
                 "name": "Punch her head back into place",
-                "text": "{i}You punch her hard and hear a loud crack. Congratulations, you fractured the bones.{s}",
-                "symptoms": -1
+                "text": "{i}You punch her hard and hear a loud crack.{n}Congratulations, you fractured the bones !{s}",
+                "symptoms": -1,
+                "sickness": 20
             }
         ],
         "painkillers": [
             {
                 "nbSymptomsNeeded": 2,
-                "text": "Pain killers ? No thanks, pain makes me more alive !"
+                "name": "Give her pain killers",
+                "text": "Pain killers ?{n}No thanks, pain makes me more alive !"
             }
         ],
         "operate": [
             {
                 "nbSymptomsNeeded": 1,
-                "text": "{i} *It takes you a few hours in the block, but you manage to put back most of her bones in the right place{s}",
+                "name": "Operate her",
+                "text": "{i}It takes you a few hours in the block,{n}but you manage to put back most of her bones in the right place{s}",
                 "sickness": -100
             }
         ]
