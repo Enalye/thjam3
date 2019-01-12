@@ -1,6 +1,6 @@
 module game.patient;
 
-import std.stdio, std.file, std.json, std.random, std.typecons;
+import std.stdio, std.file, std.json, std.random, std.typecons, std.algorithm;
 import atelier;
 import game.doctor, game.dialog;
 
@@ -12,7 +12,7 @@ class Patient {
     private {
         PatientState _state;
 
-        int _inconsciousness, _intoxication, _sickness, _symptoms;
+        int _unconsciousness, _sickness, _symptoms;
 
         JSONValue _json;
         JSONValue[string] _savedNodes;
@@ -24,8 +24,7 @@ class Patient {
         if(!hasJson(_json, "init"))
             throw new Exception("No init scope found in patient");
         auto node = getJson(_json, "init");
-        _inconsciousness = getJsonInt(node, "inconsciousness", 0);
-        _intoxication = getJsonInt(node, "intoxication", 0);
+        _unconsciousness = getJsonInt(node, "unconsciousness", 0);
         _sickness = getJsonInt(node, "sickness", 0);
         _symptoms = getJsonInt(node, "symptoms", 0);
 
@@ -60,12 +59,15 @@ class Patient {
             txt = getJsonStr(node, "text");
         }
 
-        _inconsciousness += getJsonInt(node, "inconsciousness", 0);
-        _intoxication += getJsonInt(node, "intoxication", 0);
-        _sickness += getJsonInt(node, "sickness", 0);
-        _symptoms += getJsonInt(node, "symptoms", 0);
+        _unconsciousness = max(0, _unconsciousness + getJsonInt(node, "unconsciousness", 0));
+        _sickness        = max(0, _sickness + getJsonInt(node, "sickness", 0));
+        _symptoms        = max(0, _symptoms + getJsonInt(node, "symptoms", 0));
 
+        writeln("----------------------------");
+        writeln("Unconsciousness counter is ", _unconsciousness);
         writeln("Symptom counter is ", _symptoms);
+        writeln("Sickness counter is ", _sickness);
+        writeln("----------------------------");
 
         processState();
         return txt;
