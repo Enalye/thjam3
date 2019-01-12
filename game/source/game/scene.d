@@ -75,6 +75,8 @@ class SceneGui: GuiElement {
 
         _doctor = new Doctor(doctorName);
         _patient = _doctor.getNextPatient();
+        if(_patient is null)
+            return;
 
         addChildGui(dialogGui);
     }

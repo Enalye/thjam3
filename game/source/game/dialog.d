@@ -42,7 +42,7 @@ class DialogGui: GuiElement {
         _msg.text = "";
         _timer.start(1f);
         _timer2.start(0.02f);
-        _newMsg = msg;
+        _newMsg = msg ~ " ";
         _characterId = 0;
     }
 
