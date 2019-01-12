@@ -116,7 +116,9 @@ class SceneGui: GuiElement {
         default:
             break;
         }
+    }
 
+    override void update(float deltaTime) {
         if(_patient.isHealedUp() && dialogGui.isOver()) {
             // TODO: sound and effects
             _patient = _doctor.getNextPatient();
