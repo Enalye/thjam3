@@ -46,8 +46,7 @@ class Patient {
         _state = newState;
     }
 
-    string doThing(string parentId, string id) {
-        auto txt = "";
+    void doThing(string parentId, string id) {
         if(!hasJson(_json, parentId))
             throw new Exception("No scope \'" ~ id ~ "\' found in patient");
         JSONValue parentNode = getJson(_json, parentId);
@@ -56,7 +55,14 @@ class Patient {
         auto node = _savedNodes[id];
         
         if(hasJson(node, "text")) {
-            txt = getJsonStr(node, "text");
+            string txt = getJsonStr(node, "text");
+            if(txt.length && dialogGui !is null)
+                dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
+        }
+        else if(hasJson(node, "narrator")) {
+            string txt = getJsonStr(node, "narrator");
+            if(txt.length && dialogGui !is null)
+                dialogGui.setNewDialog(txt);
         }
 
         _unconsciousness = max(0, _unconsciousness + getJsonInt(node, "unconsciousness", 0));
@@ -70,28 +76,18 @@ class Patient {
         writeln("----------------------------");
 
         processState();
-        return txt;
     }
 
     void doAction(string id) {
-        string txt = doThing("actions", id);
-        if(txt.length && dialogGui !is null) {
-            dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
-        }
+        doThing("actions", id);
     }
 
     void doObservation(string id) {
-        string txt = doThing("observations", id);
-        if(txt.length && dialogGui !is null) {
-            dialogGui.setNewDialog(" ", txt);
-        }
+        doThing("observations", id);
     }
 
     void doTalk(string id) {
-        string txt = doThing("talks", id);
-        if(txt.length && dialogGui !is null) {
-            dialogGui.setNewDialog(getJsonStr(_json, "name"), txt);
-        }
+        doThing("talks", id);
     }
 
     bool isHealedUp() {

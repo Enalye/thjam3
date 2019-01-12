@@ -15,6 +15,7 @@ class DialogGui: GuiElement {
         int _characterId;
         string _newMsg;
         VContainer _box;
+        bool _isCharacterSpeaking;
     }
 
     this() {
@@ -34,6 +35,10 @@ class DialogGui: GuiElement {
     }
 
     void setNewDialog(string name, string msg) {
+        _box.removeChildrenGuis();
+        _box.addChildGui(_name);
+        _box.addChildGui(_msg);
+
         _name.text = name;
         _msg.text = msg;
         _originalSize = _bubble.size;
@@ -44,19 +49,29 @@ class DialogGui: GuiElement {
         _timer2.start(0.02f);
         _newMsg = msg ~ " ";
         _characterId = 0;
+        _isCharacterSpeaking = true;
+    }
+
+    void setNewDialog(string msg) {
+        _box.removeChildrenGuis();
+        _box.addChildGui(_msg);
+
+        _msg.text = msg;
+        _originalSize = _bubble.size;
+        _newSize = _msg.size + Vec2f(32f, 32f);
+        _msg.text = " ";
+        _msg.text = "";
+        _timer.start(1f);
+        _timer2.start(0.02f);
+        _newMsg = msg ~ " ";
+        _characterId = 0;
+        _isCharacterSpeaking = false;
     }
 
     override void update(float deltaTime) {
         _timer.update(deltaTime);
         _timer2.update(deltaTime);
         _bubble.size = _originalSize.lerp(_newSize, easeOutBounce(_timer.time));
-
-        _box.removeChildrenGuis();
-        if(_name.text.length > 2) {
-            _box.addChildGui(_name);
-        }
-
-        _box.addChildGui(_msg);
 
         if(_characterId < _newMsg.length && !_timer2.isRunning) {
             if(_newMsg[_characterId] == '{') {
@@ -77,6 +92,10 @@ class DialogGui: GuiElement {
 
     bool isOver() {
         return _timer2.time() == 1;
+    }
+
+    bool isCharacterSpeaking() {
+        return _isCharacterSpeaking;
     }
 
     override void draw() {
