@@ -1,56 +1,84 @@
 {
-    "name": "Nameless",
+    "name": "Tsukumos Sisters",
     "init": {
-        "thirst": 20,
-        "hunger": 20,
-        "unconsciousness": 2,
-        "intoxication": 0,
-        "pain": 50,
         "sickness": 90,
-        "sadness": 20
+        "symptoms": 5
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "{i}A red head girl enters in the office carrying with pain two unconscious bodies, then leaves{s}"
-            }
-        ],
+    "hello": {
+        "text": "{i}A red head girl enters in the office carrying with pain two unconscious bodies, then leaves{s}"
+    },
+    "talks": {
         "how": [
             {
+                "nbSymptomsNeeded": 5,
+                "name": "How are you feeling ?",
+                "text": "{i}They are asleep. You need to wake them up first{s}"
+            },
+            {
+                "nbSymptomsNeeded": 2,
+                "name": "How are you feeling ?",
                 "text": "Numb. Pains a lot. What happened ?"
             }
         ],
         "what": [
             {
-                "text": "Yatsuhashi: The last thing we remember is playing at the concert with Raiko. Where is she ?"
+                "nbSymptomsNeeded": 2,
+                "name": "What is the last thing you remember ?",
+                "text": "The last thing we remember is playing at the concert with Raiko. Where is she ?"
             },
             {
-                "text": "Benben: The last thing I remember is seeing a white flash coming from her",
+                "nbSymptomsNeeded": 1,
+                "name": "Ask Raiko what happened.",
+                "text": "{i}She tells you she was having too much fun drumming.{n}She must have electrocuted them by mistake.{s}"
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
+                "nbSymptomsNeeded": 5,
+                "name": "Check out their wounds.",
                 "text": "{i}You notice burns on their skin.{s}",
+                "symptoms": -1
             }
         ],
         "scanner": [
             {
+                "nbSymptomsNeeded": 4,
+                "name": "Use the lunarian scanner.",
                 "text": "{i}Nothing broken but you can find out the damage traces a line, as if something traversed their body.{s}",
+                "symptoms": -1
             }
         ],
+    },
+    "actions": {
         "painkillers": [
             {
+                "nbSymptomsNeeded": 2,
+                "name": "Give them some painkillers.",
                 "text": "{i}This should calm them down and make it less painful{s}",
-                "pain": -50
+                "sickness": -50,
+                "symptoms": -1
             },
             {
-                "text": "{i}You've already given them some. Some more could be a bad idea seeing their state{s}"
+                "nbSymptomsNeeded": 1,
+                "name": "Give them some painkillers.",
+                "text": "{i}You've already given them some. Some more could be a bad idea seeing their state.{s}"
             }
         ],
         "medicine": [
             {
-                "text": "{i}The cure all begins to kick in and wakes them up{s}",
-                "unconsciousness": 0
+                "nbSymptomsNeeded": 3,
+                "name": "Give them a cure-all",
+                "text": "{i}The medicine begins to kick in and wakes them up{s}",
+                "sickness": -30,
+                "symptoms": -1
+            },
+            {
+                "nbSymptomsNeeded": 0,
+                "name": "Give them treatment for the electrocution",
+                "text": "{i}The medicine begins to kick in and wakes them up{s}",
+                "sickness": -20
             }
         ]
     }

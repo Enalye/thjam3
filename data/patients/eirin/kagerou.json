@@ -1,9 +1,8 @@
 {
     "name": "Nameless",
     "init": {
-        "unconsciousness": 1,
         "sickness": 40,
-        "symptoms": 2
+        "symptoms": 3
     },
     "hello": {
         "text": "I haven't slept in days. Or nights, for the matter."
@@ -26,7 +25,7 @@
     "observations": {
         "check": [
             {
-                "nbSymptomsNeeded": 1,
+                "nbSymptomsNeeded": 2,
                 "name": "Check out her skin",
                 "text": "{i}You notice packs of skin without fur, as well as a few bugs here and there.{s}",
                 "symptoms": -1
@@ -56,8 +55,8 @@
             },
             {
                 "name": "Give her some coffee",
-                "text": "You give her some coffee to wake her up. At least she isn't drowsy anymore.",
-                "unconsciousness": 0
+                "text": "You give her some coffee to wake her up. Now she isn't drowsy anymore.",
+                "symptoms": -1
             }
         ]
     }

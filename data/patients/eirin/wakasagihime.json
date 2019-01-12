@@ -1,57 +1,69 @@
 {
     "name": "Wakasagihime",
     "init": {
-        "thirst": 100,
-        "hunger": 40,
-        "unconsciousness": 0,
-        "intoxication": 0,
-        "pain": 30,
-        "sickness": 20,
-        "sadness": 60
+        "sickness": 90,
+        "symptoms": 4
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "Hello doctor Yagokoro. I don't feel so good."
-            }
-        ],
+    "hello": {
+        "text": "Hello doctor Yagokoro. I don't feel so good."
+    },
+    "talks": {
         "how": [
             {
-                "text": "Drained out. I have a big headache since this morning as well.",
+                "name": "How are you feeling ?",
+                "text": "Drained out. I have a big headache since this morning as well."
             },
             {
+                "name": "Did you drink anything weird ?",
                 "text": "No, I didn't drink anything weird. Quite the opposite actually."
             }
         ],
         "what": [
             {
-                "text": "I have been swimming in the part of the lake near the geysers. The water is surprisingly salty there."
+                "nbSymptomsNeeded": 4,
+                "name": "What happened to you ?",
+                "text": "I have been swimming in the part of the lake near the geysers. The water is surprisingly salty there.",
+                "symptoms": -1
             },
             {
-                "text": "Well, and now I have been waiting in the queue for ages."
+                "nbSymptomsNeeded": 3,
+                "name": "Something else I should be aware of ?",
+                "text": "Well, and now I have been waiting in the queue for ages..."
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
-                "text": "{i}Her scales are very dry, potentially from the long wait in the queue.{s}"
+                "nbSymptomsNeeded": 3,
+                "name": "Perform a usual checkup.",
+                "text": "{i}Her scales are very dry{s}",
+                "symptoms": -1
             }
-        ],
+        ]
+    },
+    "actions": {
         "painkillers": [
             {
+                "nbSymptomsNeeded": 2,
+                "name": "Give her painkillers.",
                 "text": "{i}That should really help with my headache, thanks !{s}",
-                "pain": -30,
-                "sickness": -10
+                "sickness": -40
             }
         ],
         "water": [
             {
+                "nbSymptomsNeeded": 2,
+                "name": "Give her some water.",
                 "text": "Ah, thanks, this is revitalizing. More please !",
-                "thirst": -30,
-                "sickness": -10
+                "sickness": -10,
+                "symptoms": -1
             },
             {
-                "text": "She drinks jars of the liquid. Must have really been dehydrated.",
-                "thirst": -70
+                "nbSymptomsNeeded": 1,
+                "name": "Make her take a bath",
+                "text": "In a few minutes barely, her scales absorb all the liquid. Must have really been dehydrated.",
+                "thisicknessrst": -50
             }
         ]
     }

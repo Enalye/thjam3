@@ -1,56 +1,73 @@
 {
-    "name": "Nameless",
+    "name": "Sekibanki",
     "init": {
-        "thirst": 20,
-        "hunger": 20,
-        "unconsciousness": 0,
-        "intoxication": 0,
-        "pain": 90,
         "sickness": 70,
-        "sadness": 20
+        "symptoms": 3
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "Good morning. Sorry to bother you, but there is something getting to my head."
-            }        
-        ],
+    "hello": {
+        "text": "Good morning. Sorry to bother you, but there is something getting to my head."
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": "I'm loosing it ! My head. Literally."
             },
             {
-                "text": "I can't move it as I should, it just drops like a dead weight."
+                "name": "What do you mean, your head ?",
+                "text": "I can't move it as I should, it just drops like a dead weight.",
+                "symptoms": -1
             }
         ],
         "what": [
             {
+                "name": "What in the name of Chang'e happened to you ?",
                 "text": "I would shrug if I could, nothing much."
             },
             {
-                "text": "I was heading to the human village when my head suddenly stopped floating."
+                "nbSymptomsNeeded": 2,
+                "name": "What in the name of Chang'e happened to your head ?",
+                "text": "I was heading to the human village when my head suddenly stopped floating.",
+                "symptoms": -1
             }          
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
+                "name": "Check her shoulders.",
                 "text": "{i}She shivers as you touch her shoulders. Looks like she's in pain but doesn't want to admit it.{s}"
+            }
+        ]
+    },
+    "actions": {
+        "manual": [
+            {
+                "name": "Attach her head back.",
+                "nbSymptomsNeeded": 1,
+                "text": "{i}You try attaching her head back but it falls on the ground.{s}",
+                "sickness": 20
             },
             {
-                "text": "{i}You try attaching her head back but it falls on the ground.{s}",
-                "pain": 10,
-                "sickness": 20
+                "name": "Attach her head back.",
+                "nbSymptomsNeeded": 0,
+                "text": "{i}You put Sekibanki's head on the prosthesis you made for her. Looks like she'll need to keep it for a while.{s}",
+                "sickness": -20
             }
         ],
         "painkillers": [
             {
+                "name": "Give her painkillers.",
                 "text": "It's fine, I can bear it.",
-                "pain": -50
+                "sickness": -20
             }
         ],
         "prosthesis": [
             {
+                "name": "Make a prosthesis to keep her head in place.",
                 "text": "{i}This should keep her head in place while she recovers.{s}",
-                "sickness": -100
+                "sickness": -60,
+                "symptoms": -1
             }
         ]
     }

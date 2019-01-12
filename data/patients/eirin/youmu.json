@@ -1,56 +1,67 @@
 {
     "name": "Youmu",
     "init": {
-        "thirst": 20,
-        "hunger": 50,
         "unconsciousness": 0,
-        "intoxication": 0,
-        "pain": 20,
         "sickness": 99,
-        "sadness": 80
+        "symptoms": 5
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "{i}The next patient enters the room crawling on their four limbs. You recognize the Netherworld Gardner.{s}"
-            }
-        ],
+    "hello": {
+        "text": "{i}The next patient enters the room crawling on their four limbs. You recognize the Netherworld Gardner.{s}"
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": "{i}She growls at you{s}"
             }
         ],
         "what": [
             {
+                "name": "What happened to you ?",
                 "text": "{i}She growls at you{s}"
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
+                "name": "Check out her condition",
                 "text": "{i}You notice her other, better half, is missing.{s}",
+                "symptoms": -1
             }
         ],
         "scanner": [
             {
+                "name": "Use the lunarian scanner.",
                 "text": "{i}Her insides are full of... Ectoplasm ?{s}",
+                "symptoms": -1
             }
-        ],
+        ]
+    },
+    "actions": {
         "operate": [
             {
+                "nbSymptomsNeeded": 2,
+                "name": "Try to operate her to remove Myon.",
                 "text": "{i}As you open her up, the ghost lunges at you. It seems you're going to be its next victim{s}",
-                "sickness": -100
+                "sickness": 100
             }
         ],
         "magic": [
             {
-                "text": "{i}You try performing an exorcism. After several hours of old incantations, you manage partially purge the ghost.{s}",
+                "nbSymptomsNeeded": 2,
+                "name": "Try to perform a good old fashioned exorcism.",
+                "text": "{i}You try performing an exorcism.{n}After several hours of old incantations, you manage to purge the ghost out of her system successfully.{s}",
                 "sickness": -50
             }
         ],
         "medicine": [
             {
+                "nbSymptomsNeeded": 3,
+                "name": "Give her a purifying elixir.",
                 "text": "{i}The medicine partially relieves Youmu from... herself ? But the spirit's influence still lingers.{s}",
-                "sickness": -50
+                "sickness": -50,
+                "symptoms": -1
             }
         ]
     }
