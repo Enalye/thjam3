@@ -119,6 +119,12 @@ class SceneGui: GuiElement {
     }
 
     override void update(float deltaTime) {
+        if(_patient.isDead() && dialogGui.isOver()) {
+            // TODO: soun and effects
+            writeln("YOU DIED");
+            onMainMenu();
+        }
+
         if(_patient.isHealedUp() && dialogGui.isOver()) {
             // TODO: sound and effects
             _patient = _doctor.getNextPatient();

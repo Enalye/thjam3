@@ -96,6 +96,10 @@ class Patient {
         return _sickness <= 0;
     }
 
+    bool isDead() {
+        return _sickness >= 100;
+    }
+
     private Tuple!(string, string)[] getList(string id) {
         if(!hasJson(_json, id))
             throw new Exception("No scope \'" ~ id ~ "\' found in patient");
