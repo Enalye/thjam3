@@ -51,7 +51,6 @@ class Patient {
             throw new Exception("No scope \'" ~ id ~ "\' found in patient");
         JSONValue parentNode = getJson(_json, parentId);
  
-        //auto list = getJsonArray(parentNode, id);
         auto node = _savedNodes[id];
         
         if(hasJson(node, "text")) {
@@ -63,6 +62,9 @@ class Patient {
             string txt = getJsonStr(node, "narrator");
             if(txt.length && dialogGui !is null)
                 dialogGui.setNewDialog(txt);
+        }
+        if(hasJson(node, "sound")) {
+            fetch!Sound(getJsonStr(node, "sound")).play();
         }
 
         _unconsciousness = max(0, _unconsciousness + getJsonInt(node, "unconsciousness", 0));
