@@ -98,12 +98,6 @@ class Patient {
             fetch!Sound("progress").play();
         }
 
-        writeln("----------------------------");
-        writeln("Unconsciousness | ", _unconsciousness);
-        writeln("Symptom         | ", _symptoms);
-        writeln("Sickness        | ", _sickness);
-        writeln("----------------------------");
-
         processState();
     }
 
