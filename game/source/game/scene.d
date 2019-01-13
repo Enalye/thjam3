@@ -209,6 +209,10 @@ class SceneGui: GuiElement {
     }
 
     void updateGUIs() {
+        // Sanity assertion
+        if(_patient is null)
+            return;
+            
         _talkGUI = new TalkGui(_patient.getTalkList());
         _observeGUI = new ObserveGui(_patient.getObservationList());
         _actionGUI = new ActionGui(_patient.getActionList());

@@ -1,1 +1,1 @@
-{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":226,"w":294,"x":76,"y":8},"name":"select_eirin","type":"sprite"},{"clip":{"h":244,"w":339,"x":34,"y":233},"name":"select_koishi","type":"sprite"}],"texture":"media\/character\/selection.png"}
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":226,"w":294,"x":76,"y":8},"name":"select_eirin_old","type":"sprite"},{"clip":{"h":244,"w":339,"x":34,"y":233},"name":"select_koishi_old","type":"sprite"}],"texture":"media\/character\/selection.png"}

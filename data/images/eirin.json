@@ -1,1 +1,1 @@
-{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":710,"w":480,"x":0,"y":0},"name":"eirin","type":"sprite"}],"texture":"media\/character\/eirin.png"}
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":710,"w":480,"x":0,"y":0},"name":"select_eirin","type":"sprite"},{"clip":{"h":710,"w":480,"x":0,"y":0},"name":"eirin","type":"sprite"}],"texture":"media\/character\/eirin.png"}
