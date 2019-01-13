@@ -1,6 +1,6 @@
 module game.menu;
 
-import std.stdio, std.conv;
+import std.stdio, std.conv, std.path, std.file;
 import atelier;
 import game.loader, game.scene;
 
@@ -26,17 +26,25 @@ void onMainMenu() {
 
 /// Character selection screen
 final class MainMenuGui: GuiElement {
+    string[] files;
+
     this() {
         size(screenSize);
 
         auto label = new Label("THJAM3");
         label.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(label);
+
+        foreach(file; dirEntries("data/doctors/", "{*.json}", SpanMode.depth)) {
+            files ~= file;
+
+            //auto json = 
+        }
     }
 
     override void onSubmit() {
         removeRootGuis();
-        addRootGui(new SceneGui("data/doctors/koishi.json"));
+        addRootGui(new SceneGui("data/doctors/eirin.json"));
     }
 
     override void update(float deltaTime) {

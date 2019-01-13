@@ -16,6 +16,8 @@ class DialogGui: GuiElement {
         string _newMsg;
         VContainer _box;
         bool _isCharacterSpeaking;
+
+        Sound _sansUndertaleTalk;
     }
 
     this() {
@@ -32,6 +34,8 @@ class DialogGui: GuiElement {
         _msg = new Text("");
         _bubble = fetch!NinePatch("bubble");
         _bubble.size = size;
+
+        _sansUndertaleTalk = fetch!Sound("talk");
     }
 
     void setNewDialog(string name, string msg) {
@@ -85,6 +89,8 @@ class DialogGui: GuiElement {
                 _msg.text = "" ~ _newMsg[0];
             else
                 _msg.text = _newMsg[0.. _characterId];
+            if(_newMsg[_characterId] != ' ')
+                _sansUndertaleTalk.play();
             _characterId ++;
             _timer2.start(0.02f);
         }
