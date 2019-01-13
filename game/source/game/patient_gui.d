@@ -14,7 +14,7 @@ class PatientGui: GuiElement {
     State state;
 
     Tileset tileset;
-    float angle;
+    float angle = 0f;
     void setCharacter(string tilesetName) {
         tileset = fetch!Tileset(tilesetName);
         size(tileset.size);
