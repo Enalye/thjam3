@@ -1,5 +1,6 @@
 {
     "id": "eirin",
+    "select": "select_eirin",
     "name": "Eirin",
     "patients": [
         "cirno",
