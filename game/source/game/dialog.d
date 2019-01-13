@@ -89,7 +89,7 @@ class DialogGui: GuiElement {
                 _msg.text = "" ~ _newMsg[0];
             else
                 _msg.text = _newMsg[0.. _characterId];
-            if(_newMsg[_characterId] != ' ')
+            if(_characterId < _newMsg.length && _newMsg[_characterId] != ' ')
                 _sansUndertaleTalk.play();
             _characterId ++;
             _timer2.start(0.02f);
