@@ -4,24 +4,93 @@ import std.typecons;
 import atelier;
 import game.patient, game.doctor, game.menu, game.dialog, game.patient_gui;
 
-class MainButton: Button {
+private final class ButtonNameGui: GuiElementCanvas {
     private {
-        Sprite _sprite;
+        Sprite _rect;
     }
 
     this(string name) {
-        _sprite = fetch!Sprite("menu_circle");
-        _sprite.size = Vec2f(100f, 100f);
-        size(_sprite.size);
+        _rect = fetch!Sprite("button_rect");
+        position(Vec2f(200f, 0f));
 
         auto lbl = new Label(name);
         lbl.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(lbl);
+
+        _rect.size = lbl.size + Vec2f(10f, 25f);
+        size(_rect.size);
+
+        GuiState defaultState = {
+            color: Color.clear,
+            offset: Vec2f(75f, 0f),
+            scale: Vec2f(.1f, .8f),
+            time: .15f
+        };
+        addState("default", defaultState);
+
+        GuiState unrolledState = {
+            offset: Vec2f(125f, 0f),
+            easingFunction: getEasingFunction("sine-in-out")
+        };
+        addState("unrolled", unrolledState);
+        setState("default");
+    }
+
+    override void draw() {
+        _rect.draw(center);
+    }
+}
+
+private final class MainButton: Button {
+    private {
+        Sprite _sprite;
+        Sprite _icon;
+        ButtonNameGui _btnName;
+    }
+
+    this(string name, string spriteName) {
+        setAlign(GuiAlignX.Left, GuiAlignY.Top);
+        _sprite = fetch!Sprite("button_circle");
+        _sprite.size = Vec2f(100f, 100f);
+        size(_sprite.size * 1.5f);
+
+        _icon = fetch!Sprite(spriteName);
+        _icon.fit(Vec2f(80f, 80f));
+
+        _btnName = new ButtonNameGui(name);
+        _btnName.setAlign(GuiAlignX.Center, GuiAlignY.Center);
+        addChildGui(_btnName);
+
+        GuiState defaultState = {
+            time: .25f
+        };
+        addState("default", defaultState);
+
+        GuiState unrolledState = {
+            offset: Vec2f(-50f, 0f),
+            easingFunction: getEasingFunction("sine-in-out")
+        };
+        addState("unrolled", unrolledState);
+        setState("default");
+    }
+
+    override void onHover() {
+        doTransitionState("unrolled");
+        _btnName.doTransitionState("unrolled");
+    }
+
+    override void update(float deltaTime) {
+        if(!isHovered) {
+            doTransitionState("default");
+            _btnName.doTransitionState("default");
+        }
     }
 
     override void draw() {
         _sprite.color = isLocked ? Color(.3f, .6f, .6f) : Color.white;
+        _icon.color = isLocked ? Color(.6f, .6f, .6f) : Color.white;
         _sprite.draw(center);
+        _icon.draw(center);
     }
 }
 
@@ -31,9 +100,8 @@ class MenuButton: Button {
     }
 
     this(string name) {
-        _sprite = fetch!Sprite("menu_rect");
-        _sprite.size = Vec2f(100f, 25f);
-        size(_sprite.size);
+        _sprite = fetch!Sprite("button_cross");
+        size(_sprite.size * 2f);
 
         auto lbl = new Label(name);
         lbl.setAlign(GuiAlignX.Center, GuiAlignY.Center);
@@ -51,27 +119,32 @@ class SceneGui: GuiElement {
 
     MainButton _talksBtn, _observationsBtn, _actionsBtn;
 
+    Sprite _bgSprite, _bordersSprite;
+
     this(string doctorName) {
         dialogGui = new DialogGui;
         patientGui = new PatientGui;
 
+        _bgSprite = fetch!Sprite("background");
+        _bordersSprite = fetch!Sprite("borders");
+
         size(screenSize);
 
-        auto box = new VContainer;
-        box.setAlign(GuiAlignX.Right, GuiAlignY.Center);
-        addChildGui(box);
         {
-            _talksBtn = new MainButton("Talk");
+            _talksBtn = new MainButton("Talk", "button_bubble");
+            _talksBtn.position = Vec2f(880f, 455f);
             _talksBtn.setCallback(this, "talk");
-            box.addChildGui(_talksBtn);
+            addChildGui(_talksBtn);
 
-            _observationsBtn = new MainButton("Observe");
+            _observationsBtn = new MainButton("Observations", "button_eye");
+            _observationsBtn.position = Vec2f(695f, 550f);
             _observationsBtn.setCallback(this, "observe");
-            box.addChildGui(_observationsBtn);
+            addChildGui(_observationsBtn);
 
-            _actionsBtn = new MainButton("Actions");
+            _actionsBtn = new MainButton("Actions", "button_needle");
+            _actionsBtn.position = Vec2f(1060f, 320f);
             _actionsBtn.setCallback(this, "action");
-            box.addChildGui(_actionsBtn);
+            addChildGui(_actionsBtn);
         }
 
         auto menuBtn = new MenuButton("Menu");
@@ -150,6 +223,11 @@ class SceneGui: GuiElement {
             isSuccess = false;
             _patient = _doctor.getNextPatient();
         }
+    }
+
+    override void draw() {
+        _bgSprite.draw(center);
+        _bordersSprite.draw(center);
     }
 }
 
