@@ -7,7 +7,7 @@
         "symptoms": 5
     },
     "hello": {
-        "text": "{i}The next patient enters the room crawling on their four limbs.{n}You recognize the Netherworld Gardener.{s}"
+        "narrator": "{i}The next patient enters the room crawling on their four limbs.{n}You recognize the Netherworld Gardener.{s}"
     },
     "talks": {
         "how": [
