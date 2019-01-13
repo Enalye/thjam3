@@ -279,6 +279,7 @@ private final class SubMenuButton: GuiElementCanvas {
         addChildGui(lbl);
 
         size(lbl.size + Vec2f(25f, 25f));
+        _sprite.size = size;
 
         //States
         GuiState hiddenState = {
