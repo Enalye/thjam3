@@ -119,7 +119,11 @@ class SceneGui: GuiElement {
 
     MainButton _talksBtn, _observationsBtn, _actionsBtn;
 
-    Sprite _bgSprite, _bordersSprite;
+    TalkGui     _talkGUI;
+    ObserveGui  _observeGUI;
+    ActionGui   _actionGUI;
+
+    Sprite _bgSprite, _bordersSprite, _doctorSprite;
 
     this(string doctorName) {
         dialogGui = new DialogGui;
@@ -152,30 +156,29 @@ class SceneGui: GuiElement {
         addChildGui(menuBtn);
 
         _doctor = new Doctor(doctorName);
+        //_doctorSprite = fetch!Sprite(_doctor.id);
         _patient = _doctor.getNextPatient();
         if(_patient is null)
             return;
 
         addChildGui(dialogGui);
         addChildGui(patientGui);
+        updateGUIs();
     }
 
     override void onCallback(string id) {
         switch(id) {
         case "talk":
-            auto modal = new TalkGui(_patient.getTalkList());
-            modal.setCallback(this, "modal.talk");
-            setModalGui(modal);
+            _talkGUI.setCallback(this, "modal.talk");
+            setModalGui(_talkGUI);
             break;
         case "observe":
-            auto modal = new ObserveGui(_patient.getObservationList());
-            modal.setCallback(this, "modal.observe");
-            setModalGui(modal);
+            _observeGUI.setCallback(this, "modal.observe");
+            setModalGui(_observeGUI);
             break;
         case "action":
-            auto modal = new ActionGui(_patient.getActionList());
-            modal.setCallback(this, "modal.action");
-            setModalGui(modal);
+            _actionGUI.setCallback(this, "modal.action");
+            setModalGui(_actionGUI);
             break;
         case "modal.talk":
             auto modal = getModalGui!TalkGui();
@@ -195,6 +198,14 @@ class SceneGui: GuiElement {
         default:
             break;
         }
+
+        updateGUIs();
+    }
+
+    void updateGUIs() {
+        _talkGUI = new TalkGui(_patient.getTalkList());
+        _observeGUI = new ObserveGui(_patient.getObservationList());
+        _actionGUI = new ActionGui(_patient.getActionList());
     }
 
     bool isFailed, isSuccess;
@@ -206,9 +217,9 @@ class SceneGui: GuiElement {
             endTimer.start(1f);
         }
 
-        _talksBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
-        _observationsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
-        _actionsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
+        _talksBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess || _talkGUI.data.length == 0;
+        _observationsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess || _observeGUI.data.length == 0;
+        _actionsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess || _actionGUI.data.length == 0;
 
         if(_patient.isHealedUp() && dialogGui.isOver() && !isFailed && !isSuccess) {
             isSuccess = true;
@@ -226,6 +237,7 @@ class SceneGui: GuiElement {
     }
 
     override void draw() {
+        //_doctorSprite.draw(center);
         _bgSprite.draw(center);
         _bordersSprite.draw(center);
     }
@@ -233,8 +245,10 @@ class SceneGui: GuiElement {
 
 class TalkGui: GuiElement {
     string value;
+    Tuple!(string, string)[] data;
 
     this(Tuple!(string, string)[] list) {
+        data = list;
         size(screenSize);
 
         auto box = new VContainer;
@@ -260,8 +274,10 @@ class TalkGui: GuiElement {
 
 class ObserveGui: GuiElement {
     string value;
+    Tuple!(string, string)[] data;
 
     this(Tuple!(string, string)[] list) {
+        data = list;
         size(screenSize);
 
         auto box = new VContainer;
@@ -287,8 +303,10 @@ class ObserveGui: GuiElement {
 
 class ActionGui: GuiElement {
     string value;
+    Tuple!(string, string)[] data;
 
     this(Tuple!(string, string)[] list) {
+        data = list;
         size(screenSize);
 
         auto box = new VContainer;

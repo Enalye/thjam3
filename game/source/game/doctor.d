@@ -6,6 +6,8 @@ import game.patient, game.menu;
 
 
 final class Doctor {
+    string id;
+
     private {
         JSONValue _json;
         string[] _patients;
@@ -14,8 +16,9 @@ final class Doctor {
 
     this(string name) {
         _json = parseJSON(readText(name));
+        id = getJsonStr(_json, "id");
         _patients = getJsonArrayStr(_json, "patients");
-        auto music = fetch!Music(getJsonStr(_json, "id"));
+        auto music = fetch!Music(id);
         music.isLooped = true;
         music.play();
     }
@@ -28,7 +31,7 @@ final class Doctor {
             return null;
         }
         else {
-            return new Patient("data/patients/" ~ getJsonStr(_json, "id") ~ "/" ~ _patients[_patientId] ~ ".json");
+            return new Patient("data/patients/" ~ id ~ "/" ~ _patients[_patientId] ~ ".json");
         }
     }
 }
