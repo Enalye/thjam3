@@ -103,6 +103,6 @@ final class MainMenuGui: GuiElement {
 
     override void draw() {
         _bg.draw(center);
-        _sprites[selectId].draw(center);
+        _sprites[selectId].draw(Vec2f(center.x, center.y + 80));
     }
 }
