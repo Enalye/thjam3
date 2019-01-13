@@ -115,7 +115,7 @@
             },
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Give her some more Medicine.",
+                "name": "Give her some more Medicine",
                 "narrator": "{i}You hand her a doll Youkai.{n}She begins to sneeze danmaku at you...{s}",
                 "sickness": 100
             }
@@ -124,7 +124,7 @@
             {
                 "nbSymptomsNeeded": 0,
                 "name": "Change her DNA to make her resistant to pollen.",
-                "text": "Wow, thank you !{n}Now I guess I can really master all kinds of flowers",
+                "text": "Wow, thank you !{n}Now I guess I can really master all kinds of flowers.",
                 "sickness": -100
             }
         ]
