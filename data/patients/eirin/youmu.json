@@ -1,5 +1,6 @@
 {
     "name": "Youmu",
+    "anim": "youmu",
     "init": {
         "unconsciousness": 0,
         "sickness": 99,

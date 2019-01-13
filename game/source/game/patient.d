@@ -80,9 +80,22 @@ class Patient {
             fetch!Sound(getJsonStr(node, "sound")).play();
         }
 
+        auto lastSickness = _sickness;
+        auto lastSymptom = _symptoms;
         _unconsciousness = max(0, _unconsciousness + getJsonInt(node, "unconsciousness", 0));
         _sickness        = max(0, _sickness + getJsonInt(node, "sickness", 0));
         _symptoms        = max(0, _symptoms + getJsonInt(node, "symptoms", 0));
+
+        if(_sickness > lastSickness) {
+            fetch!Sound(_sickness >= 100 ? "victory" : "sick_up").play();
+        }
+        else if(_sickness < lastSickness) {
+            fetch!Sound(_sickness <= 0 ? "victory" : "sick_down").play();
+        }
+
+        if(_symptoms != lastSymptom) {
+            fetch!Sound("progress").play();
+        }
 
         writeln("----------------------------");
         writeln("Unconsciousness | ", _unconsciousness);
