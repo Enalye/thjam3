@@ -13,6 +13,11 @@
             {
                 "name": "How are you feeling ?",
                 "text": "Sleepy. Actually, I have felt drained out for ages now."
+            },
+            {
+                "unconsciousStateNeeded": "2",
+                "name": "How are you feeling ?",
+                "narrator": "She's unconscious. Surprisingly, unconscious people don't talk"
             }
         ],
         "what": [
@@ -33,17 +38,19 @@
             {
                 "nbSymptomsNeeded": 9,
                 "name": "Cheer her up by agitating your arms",
-                "narrator": "{i}It always manages to lighten up her mood.{n}She is less tense already{s}",
+                "narrator": "{i}It always manages to lighten up her mood.{n}She is less tense already.{s}",
                 "symptoms": -5,
                 "sickness": -25
             }
         ],
         "cat": [
             {
+                "unconsciousStateNeeded": "1",
                 "name": "Call rin to play",
                 "narrator": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
                 "symptoms": -10,
-                "sickness": 20
+                "sickness": 20,
+                "unconsciousness": 1
             }
         ]
     },
@@ -68,7 +75,7 @@
             {
                 "nbSymptomsNeeded": 5,
                 "name": "Analyze her eye closely",
-                "narrator": "{i}You notice fur stuck on her eyelid.{n}Her retina also seem to have suffer some damage{s}",
+                "narrator": "{i}You notice fur stuck on her eyelid.{n}Her retina also seem to have suffered some damage.{s}",
                 "symptoms": -1
             }
         ]
@@ -87,13 +94,23 @@
             {
                 "nbSymptomsNeeded": 4,
                 "name": "Operate her eye",
-                "narrator": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though{s}",
+                "narrator": "{i}You put Satori to sleep with some flower gaz and make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though.{s}",
+                "sickness": -25,
+                "symptoms": -1,
+                "unconsciousness": 1
+            },
+            {
+                "unconsciousStateNeeded": 2,
+                "nbSymptomsNeeded": 4,
+                "name": "Operate her eye",
+                "narrator": "{i}You make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though.{s}",
                 "sickness": -25,
                 "symptoms": -1
             }
         ],
         "punch": [
             {
+                "unconsciousStateNeeded": "1",
                 "name": "Kick the eye",
                 "text": "Sister, I'm pretty sure this won't help.{n}I really wonder what you're thinking some times.",
                 "sickness": 10
