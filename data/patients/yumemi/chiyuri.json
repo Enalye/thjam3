@@ -1,0 +1,17 @@
+{
+    "name": "Chiyuri",
+    "init": {
+        "unconsciousness": 1,
+        "sickness": 99,
+        "symptoms": 9001
+    },
+    "hello": {
+        "text": ""
+    },
+    "talks": {
+    },
+    "observations": {
+    },
+    "actions": {
+    }
+}
