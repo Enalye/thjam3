@@ -5,7 +5,7 @@ import atelier;
 import game.loader, game.scene;
 
 void setupApplication(string[] args) {
-	createApplication(Vec2u(1280u, 720u), "Thjam3");
+	createApplication(Vec2u(1280u, 720u), "Youkai Center");
 
     windowClearColor = Color(0.111f, 0.1125f, 0.123f);
 
@@ -41,6 +41,7 @@ private final class ArrowButton: Button {
 
 /// Character selection screen
 final class MainMenuGui: GuiElement {
+    Sprite _bg;
     string[] files;
     Sprite[] _sprites;
     int selectId;
@@ -50,7 +51,9 @@ final class MainMenuGui: GuiElement {
     this() {
         size(screenSize);
 
-        auto label = new Label("THJAM3");
+        _bg = fetch!Sprite("title_bg");
+
+        auto label = new Label("Youkai Center");
         label.setAlign(GuiAlignX.Center, GuiAlignY.Top);
         addChildGui(label);
 
@@ -99,6 +102,7 @@ final class MainMenuGui: GuiElement {
     }
 
     override void draw() {
+        _bg.draw(center);
         _sprites[selectId].draw(center);
     }
 }

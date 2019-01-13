@@ -1,5 +1,6 @@
 module game.patient;
 
+import std.conv: to;
 import std.stdio, std.file, std.json, std.random, std.typecons, std.algorithm;
 import atelier;
 import game.doctor, game.dialog, game.patient_gui;
