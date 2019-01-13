@@ -156,7 +156,7 @@ class SceneGui: GuiElement {
         addChildGui(menuBtn);
 
         _doctor = new Doctor(doctorName);
-        //_doctorSprite = fetch!Sprite(_doctor.id);
+        _doctorSprite = fetch!Sprite(_doctor.id ~ "_face");
         _patient = _doctor.getNextPatient();
         if(_patient is null)
             return;
@@ -237,8 +237,10 @@ class SceneGui: GuiElement {
     }
 
     override void draw() {
-        //_doctorSprite.draw(center);
         _bgSprite.draw(center);
+        _doctorSprite.anchor = Vec2f(1, 0);
+        _doctorSprite.fit(Vec2f(280, 280));
+        _doctorSprite.draw(Vec2f(screenWidth, 0));
         _bordersSprite.draw(center);
     }
 }
