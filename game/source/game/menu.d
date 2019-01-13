@@ -51,6 +51,10 @@ final class MainMenuGui: GuiElement {
     this() {
         size(screenSize);
 
+        auto music = fetch!Music("title");
+        music.isLooped = true;
+        music.play();
+
         _bg = fetch!Sprite("title_bg");
 
         auto label = new Label("Youkai Center");
