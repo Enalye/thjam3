@@ -44,7 +44,7 @@ final class MainMenuGui: GuiElement {
 
     override void onSubmit() {
         removeRootGuis();
-        addRootGui(new SceneGui("data/doctors/eirin.json"));
+        addRootGui(new SceneGui("data/doctors/koishi.json"));
     }
 
     override void update(float deltaTime) {

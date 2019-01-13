@@ -1,61 +1,78 @@
 {
     "name": "Utsuho",
     "init": {
-        "thirst": 20,
-        "hunger": 20,
         "unconsciousness": 1,
-        "intoxication": 0,
-        "pain": 20,
         "sickness": 80,
-        "sadness": 20
+        "symptoms": 666
     },
-    "behaviour": {
-        "hello": [
-            {
-                "text": "Hello, Koishi. I think there is something wrong with me ?"
-            }
-        ],
+    "hello": {
+        "text": "Hello, Koishi. I think there is something wrong with me ?"
+    },
+    "talks": {
         "how": [
             {
+                "name": "How are you feeling ?",
                 "text": "Sleepy. Actually, I have felt drained out for ages now."
             }
         ],
         "what": [
             {
-                "text": "Well, it's this time of the month again. It is erupting."
+                "nbSymptomsNeeded": 666,
+                "name": "What happened to you ?",
+                "text": "Well, it's this time of the month again. It is erupting.",
+                "symptoms": -600
             }
-        ],
+        ]
+    },
+    "observations": {
         "check": [
             {
-                "text": "{i}She sweats, but it looks like the droplets vaporize almost instantaneously. You touch her skin... Ouch ! She's burning{s}"
+                "nbSymptomsNeeded": 66,
+                "name": "Check her up",
+                "narrator": "{i}She sweats, but it looks like the droplets vaporize almost instantaneously.{n}You touch her skin... Ouch ! She's burning !{s}",
+                "symptoms": -60
             }
         ],
         "mindread": [
             {
-                "text": "You can feel the Yatagarasu. It looks like there is an eruption ongoing."
+                "name": "Read her subconscious",
+                "narrator": "{i}You can feel the Yatagarasu. It looks like there is an eruption ongoing.{s}"
             }
         ],
         "temperature": [
             {
-                "text": "She is definitely hotter than usual, that's for sure. Now, you know exactly how cold she needs to get"
+                "name": "Take her temperature",
+                "narrator": "{i}She is definitely hotter than usual, that's for sure.{n}Now, you know exactly how cold she needs to get.{s}"
             }
         ],
+        "stare": [
+            {
+                "name": "Stare at her",
+                "narrator": "{i}Staring is quite a bold move.{n}You become blind{s}",
+                 "sickness": 100
+            }
+        ]
+    },
+    "actions": {
         "operate": [
             {
-                "text": "{i}You open up Utsuho and try to dislodge the Yatagarasu core from her body. Sadly, before you manage to complete the procedure, her heart stops...{s}",
+                "name": "Try operating her to take the Yatagarasu out",
+                "narrator": "{i}You open up Utsuho and try to dislodge the Yatagarasu core from her body.{n}Sadly, before you manage to complete the procedure, her heart stops...{s}",
                 "sickness": 100
             }
         ],
         "punch": [
             {
-                "text": "Unyuu ?",
-                "sadness": 20
+                "name": "Use a spellcard",
+                "narrator": "{i}She bombs it.{n}You manage to escape the blackhole by shee luck.{n}It seems she at least cooled off.{s}",
+                "sickness": 20
             }
         ],
         "water": [
             {
-                "text": "You drawn lead Utsuho atop the Geyser, with great pain. The Misty Lake is surprisingly frozen ! That's even better than expected.",
-                "sickness": -80
+                "name": "Lead her to the Misty Lake to cool her off",
+                "narrator": "{i}The lake is surprisingly frozen !{n}That's even better than expected.{n}It looks like the nuclear core colled off... For now.{s}",
+                "sickness": -100
             }
         ]
     }

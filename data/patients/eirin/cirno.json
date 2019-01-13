@@ -18,14 +18,22 @@
                 "name": "What do you mean ?",
                 "text": "I can't stop sneezing but it's not because of the flowers.{n}I froze most I could find.",
                 "symptoms": -1
+            },
+            {
+                "unconsciousStateNeeded": "2",
+                "name": "How are you feeling ?",
+                "narrator": "She's unconscious. Surprisingly, unconscious people don't talk."
             }
         ],
         "what": [
             {
+                "unconsciousStateNeeded": "1",
                 "name": "What happened recently ?",
                 "text": "I have been playing quite a lot.{n}Freezing frogs, fairies, humans even."
             },
             {
+                "unconsciousStateNeeded": "1",
+                "nbSymptomsNeeded": "1",
                 "name": "Nothing else ?",
                 "text": "Then Letty came up and we began using our powers together.{n}Maybe that was a bit too much, we froze most of the lake."
             }
@@ -57,9 +65,10 @@
     "actions": {
         "painkillers": [
             {
+                "unconsciousStateNeeded": "1",
                 "name": "Give her painkillers.",
                 "narrator": "{i}Pretty bad idea.{n}She begins shivering and collapses.{s}",
-                "unconsciousness": "2"
+                "unconsciousness": 1
             }
         ],
         "medicine": [
