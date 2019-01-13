@@ -97,7 +97,7 @@
             {
                 "nbSymptomsNeeded": 996,
                 "name": "Enter the laboratory",
-                "narrator": "{i}It is a mess. The wall of the vessel is destroyed.{n}and there is a tank in the middle of the room...{s}",
+                "narrator": "{i}It is a mess. The wall of the vessel is destroyed.{n}And there is a tank in the middle of the room...{s}",
                 "symptoms": -1
             },
             {
@@ -175,7 +175,7 @@
             {
                 "nbSymptomsNeeded": 994,
                 "name": "Feed the bats with the strawberries.",
-                "narrator": "{i}It seems they'd rather eat something else.{n}",
+                "narrator": "{i}It seems they'd rather eat something else.{s}",
                 "symptoms": -1
             },
             {
