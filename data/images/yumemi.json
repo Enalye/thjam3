@@ -1,1 +1,1 @@
-{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":550,"w":400,"x":0,"y":0},"name":"select_yumemi","type":"sprite"}],"texture":"media\/character\/yumemi.png"}
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":550,"w":400,"x":0,"y":0},"name":"select_yumemi","type":"sprite"},{"clip":{"h":550,"w":400,"x":0,"y":0},"name":"yumemi","type":"sprite"}],"texture":"media\/character\/yumemi.png"}
