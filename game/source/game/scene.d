@@ -153,10 +153,6 @@ class SceneGui: GuiElement {
             addChildGui(_actionsBtn);
         }
 
-        auto menuBtn = new MenuButton("Menu");
-        menuBtn.setCallback(this, "menu");
-        addChildGui(menuBtn);
-
         _doctor = new Doctor(doctorName);
         _doctorSprite = fetch!Sprite(_doctor.id ~ "_face");
         _patient = _doctor.getNextPatient();
@@ -170,6 +166,10 @@ class SceneGui: GuiElement {
         addChildGui(dialogGui);
         addChildGui(patientGui);
         updateGUIs();
+
+        auto menuBtn = new MenuButton("Menu");
+        menuBtn.setCallback(this, "menu");
+        addChildGui(menuBtn);
     }
 
     override void onCallback(string id) {
@@ -256,6 +256,52 @@ class SceneGui: GuiElement {
     }
 }
 
+private final class SubMenuButton: GuiElementCanvas {
+    private {
+        Sprite _sprite;
+    }
+
+    void function() onClick;
+
+    override void onSubmit() {
+        if(isLocked)
+            return;
+        if(onClick !is null)
+            onClick();
+        triggerCallback();
+    }
+
+    this(string name) {
+        _sprite = fetch!Sprite("button_rect");
+
+        auto lbl = new Label(name);
+        lbl.setAlign(GuiAlignX.Center, GuiAlignY.Center);
+        addChildGui(lbl);
+
+        size(lbl.size + Vec2f(25f, 25f));
+
+        //States
+        GuiState hiddenState = {
+            offset: Vec2f(0f, -50f),
+            color: Color.clear
+        };
+        addState("hidden", hiddenState);
+
+        GuiState defaultState = {
+            time: .5f,
+            easingFunction: getEasingFunction("sine-out")
+        };
+        addState("default", defaultState);
+
+        setState("hidden");
+        doTransitionState("default");
+    }
+
+    override void draw() {
+        _sprite.draw(center);
+    }
+}
+
 class SyringeGui: GuiElement {
     Sprite _syringeSprite, _gaugeSprite;
     Patient _patientReference;
@@ -315,10 +361,11 @@ class TalkGui: GuiElement {
         size(screenSize);
 
         auto box = new VContainer;
+        box.spacing = Vec2f(0f, 15f);
         box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(box);
         foreach(element; list) {
-            auto btn = new TextButton(element[1]);
+            auto btn = new SubMenuButton(element[1]);
             btn.setCallback(this, element[0]);
             box.addChildGui(btn);
         }
@@ -344,10 +391,11 @@ class ObserveGui: GuiElement {
         size(screenSize);
 
         auto box = new VContainer;
+        box.spacing = Vec2f(0f, 15f);
         box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(box);
         foreach(element; list) {
-            auto btn = new TextButton(element[1]);
+            auto btn = new SubMenuButton(element[1]);
             btn.setCallback(this, element[0]);
             box.addChildGui(btn);
         }
@@ -373,10 +421,11 @@ class ActionGui: GuiElement {
         size(screenSize);
 
         auto box = new VContainer;
+        box.spacing = Vec2f(0f, 15f);
         box.setAlign(GuiAlignX.Center, GuiAlignY.Center);
         addChildGui(box);
         foreach(element; list) {
-            auto btn = new TextButton(element[1]);
+            auto btn = new SubMenuButton(element[1]);
             btn.setCallback(this, element[0]);
             box.addChildGui(btn);
         }
