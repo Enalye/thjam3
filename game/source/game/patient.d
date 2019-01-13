@@ -30,7 +30,14 @@ class Patient {
 
         if(hasJson(_json, "hello")) {
             auto hello = getJson(_json, "hello");
-            dialogGui.setNewDialog(getJsonStr(_json, "name"), getJsonStr(hello, "text"));
+
+            if(hasJson(hello, "text")) {
+                dialogGui.setNewDialog(getJsonStr(_json, "name"), getJsonStr(hello, "text"));
+            }
+
+            if(hasJson(hello, "narrator")) {
+                dialogGui.setNewDialog(getJsonStr(hello, "narrator"));
+            }
         }
     }
 
