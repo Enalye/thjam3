@@ -4,9 +4,17 @@ import std.random;
 import atelier;
 import game.dialog;
 
+PatientGui patientGui;
+
 class PatientGui: GuiElement {
     HeadGui headGui;
     BodyGui bodyGui;
+
+    Timer timer;
+    enum State {
+        Normal, MovingOut, MovingIn
+    }
+    State state;
 
     this() {
         setAlign(GuiAlignX.Left, GuiAlignY.Top);
@@ -19,7 +27,42 @@ class PatientGui: GuiElement {
         addChildGui(headGui);
     }
 
+    override void update(float deltaTime) {
+        timer.update(deltaTime);
+        final switch(state) with(State) {
+        case Normal:
+            position(Vec2f(350f, 300f));
+            break;
+        case MovingOut:
+            position(Vec2f(lerp(350f, -300f, easeInCirc(timer.time)), 300f));
+            if(!timer.isRunning)
+                state = State.Normal;
+            break;
+        case MovingIn:
+            position(Vec2f(lerp(900f, 350f, easeOutCirc(timer.time)), 300f));
+            if(!timer.isRunning)
+                state = State.Normal;
+            break;
+        }
+    }
 
+    void moveOut() {
+        state = State.MovingOut;
+        timer.start(1f);
+    }
+
+    void moveIn() {
+        state = State.MovingIn;
+        timer.start(1f);
+    }
+
+    void setUnconscious() {
+        
+    }
+
+    void setDead() {
+
+    }
 }
 
 class HeadGui: GuiElement {

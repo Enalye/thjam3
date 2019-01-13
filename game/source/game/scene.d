@@ -46,7 +46,6 @@ class MenuButton: Button {
 }
 
 class SceneGui: GuiElement {
-    PatientGui  _patientGui;
     Patient     _patient;
     Doctor      _doctor;
 
@@ -54,7 +53,7 @@ class SceneGui: GuiElement {
 
     this(string doctorName) {
         dialogGui = new DialogGui;
-        _patientGui = new PatientGui;
+        patientGui = new PatientGui;
 
         size(screenSize);
 
@@ -85,7 +84,7 @@ class SceneGui: GuiElement {
             return;
 
         addChildGui(dialogGui);
-        addChildGui(_patientGui);
+        addChildGui(patientGui);
     }
 
     override void onCallback(string id) {
@@ -125,19 +124,30 @@ class SceneGui: GuiElement {
         }
     }
 
+    bool isFailed, isSuccess;
+    Timer endTimer;
     override void update(float deltaTime) {
-        if(_patient.isDead() && dialogGui.isOver()) {
-            // TODO: soun and effects
-            writeln("YOU DIED");
-            onMainMenu();
+        endTimer.update(deltaTime);
+        if(_patient.isDead() && dialogGui.isOver() && !isFailed && !isSuccess) {
+            isFailed = true;
+            endTimer.start(1f);
         }
 
-        _talksBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
-        _observationsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
-        _actionsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver();
+        _talksBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
+        _observationsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
+        _actionsBtn.isLocked = _patient.isHealedUp() || !dialogGui.isOver() || isFailed || isSuccess;
 
-        if(_patient.isHealedUp() && dialogGui.isOver()) {
-            // TODO: sound and effects
+        if(_patient.isHealedUp() && dialogGui.isOver() && !isFailed && !isSuccess) {
+            isSuccess = true;
+            endTimer.start(1f);
+        }
+
+        if(isFailed && !endTimer.isRunning) {
+            isFailed = false;
+            onMainMenu();
+        }
+        else if(isSuccess && !endTimer.isRunning) {
+            isSuccess = false;
             _patient = _doctor.getNextPatient();
         }
     }
