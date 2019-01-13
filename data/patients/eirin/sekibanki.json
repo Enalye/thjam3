@@ -1,5 +1,6 @@
 {
     "name": "Sekibanki",
+    "anim": "sekibanki",
     "init": {
         "sickness": 70,
         "symptoms": 3
