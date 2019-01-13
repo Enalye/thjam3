@@ -61,7 +61,6 @@
                 "nbSymptomsNeeded": 997,
                 "name": "Look at her closely.",
                 "narrator": "{i}You can find out stawberry plants growing on her.{n}A few fruits are ready to be picked.{s}",
-                "symptoms": -1,
                 "unconsciousness": 1
             }
         ],
@@ -109,10 +108,11 @@
             {
                 "unconsciousStateNeeded": 4,
                 "nbSymptomsNeeded": 990,
-                "name": "Make an antidot.e",
+                "name": "Make an antidote.",
                 "narrator": "{i}The strawberries begin to rot and wither.{n}But you'll still have to remove the roots somehow.{s}",
                 "symptoms": -1,
-                "sickness": -5
+                "sickness": -5,
+                "unconsciousness": -1
             }
         ],
         "medicine": [
