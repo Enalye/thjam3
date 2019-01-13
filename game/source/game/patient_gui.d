@@ -69,6 +69,8 @@ class PatientGui: GuiElement {
     }
 
     override void draw() {
+        if(tileset is null)
+            return;
         tileset.angle = angle;
         if(dialogGui.isOver() || !dialogGui.isCharacterSpeaking())
             tileset.draw(0, center);
