@@ -289,14 +289,14 @@ class SyringeGui: GuiElement {
 
     override void update(float deltaTime) {
         float level = _patientReference.getSicknessLevel();
-        if(level != _oldLevel) {
+        if(_targetLevel != level) {
             _oldLevel = _targetLevel;
             _targetLevel = level;
             _timer.start(0.5f);
         }
 
-        float displayLevel = _oldLevel.lerp(_targetLevel, easeOutBounce(_timer.time));
-        //_debugLevel = max(0, min(1, _debugLevel + 0.01f * deltaTime));
+        _timer.update(deltaTime);
+        float displayLevel = _oldLevel.lerp(_targetLevel, _timer.time);
         _gaugeSprite.size.y =  _startHeight * displayLevel;
     }
 
