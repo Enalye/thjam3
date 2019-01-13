@@ -59,9 +59,11 @@ class Patient {
 
     void doThing(string parentId, string id) {
         if(!hasJson(_json, parentId))
-            throw new Exception("No scope \'" ~ id ~ "\' found in patient");
+            throw new Exception("No scope \'" ~ parentId ~ "\' found in patient");
         JSONValue parentNode = getJson(_json, parentId);
  
+        if((id in _savedNodes) is null)
+            throw new Exception("No node \'" ~ id ~ "\' saved.");
         auto node = _savedNodes[id];
         
         if(hasJson(node, "text")) {

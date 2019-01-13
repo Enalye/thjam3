@@ -214,6 +214,7 @@ class SceneGui: GuiElement {
         endTimer.update(deltaTime);
         if(_patient.isDead() && dialogGui.isOver() && !isFailed && !isSuccess) {
             isFailed = true;
+            patientGui.setDead();
             endTimer.start(1f);
         }
 
@@ -223,6 +224,7 @@ class SceneGui: GuiElement {
 
         if(_patient.isHealedUp() && dialogGui.isOver() && !isFailed && !isSuccess) {
             isSuccess = true;
+            patientGui.moveOut();
             endTimer.start(1f);
         }
 
@@ -232,7 +234,9 @@ class SceneGui: GuiElement {
         }
         else if(isSuccess && !endTimer.isRunning) {
             isSuccess = false;
+            patientGui.moveIn();
             _patient = _doctor.getNextPatient();
+            updateGUIs();
         }
     }
 

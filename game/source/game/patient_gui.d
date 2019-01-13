@@ -9,11 +9,12 @@ PatientGui patientGui;
 class PatientGui: GuiElement {
     Timer timer;
     enum State {
-        Normal, MovingOut, MovingIn
+        Normal, MovingOut, MovingIn, Dead
     }
     State state;
 
     Tileset tileset;
+    float angle;
     void setCharacter(string tilesetName) {
         tileset = fetch!Tileset(tilesetName);
         size(tileset.size);
@@ -33,11 +34,19 @@ class PatientGui: GuiElement {
             break;
         case MovingOut:
             position(Vec2f(lerp(250f, -300f, easeInCirc(timer.time)), 200f));
+            angle = 0f;
             if(!timer.isRunning)
                 state = State.Normal;
             break;
         case MovingIn:
             position(Vec2f(lerp(900f, 250f, easeOutCirc(timer.time)), 200f));
+            angle = 0f;
+            if(!timer.isRunning)
+                state = State.Normal;
+            break;
+        case Dead:
+            position(Vec2f(250f, lerp(200f, 600f, easeOutCirc(timer.time))));
+            angle = 0f;
             if(!timer.isRunning)
                 state = State.Normal;
             break;
@@ -54,15 +63,13 @@ class PatientGui: GuiElement {
         timer.start(1f);
     }
 
-    void setUnconscious() {
-        
-    }
-
     void setDead() {
-
+        state = State.Dead;
+        timer.start(1f);
     }
 
     override void draw() {
+        tileset.angle = angle;
         if(dialogGui.isOver() || !dialogGui.isCharacterSpeaking())
             tileset.draw(0, center);
         else
