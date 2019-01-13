@@ -56,7 +56,7 @@
             },
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Ask her to visit her place",
+                "name": "Ask her to visit her place.",
                 "text": "Sure thing.{n}I can bring you there once I am healed.",
                 "symptoms": -1
             }
@@ -66,7 +66,7 @@
         "check": [
             {
                 "nbSymptomsNeeded": 12,
-                "name": "Check her up her skin",
+                "name": "Check her up her skin.",
                 "narrator": "{i}You notice her eyes and nose are red.{n}She seems to be embarrassed.{s}",
                 "symptoms": -1
             }
@@ -74,7 +74,7 @@
         "mindread": [
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Read her mind",
+                "name": "Read her mind.",
                 "narrator": "{i}You're going to have pretty nightmares because of this...{s}",
                 "sickness": 100
             }
@@ -82,7 +82,7 @@
         "smell": [
             {
                 "nbSymptomsNeeded": 24,
-                "name":"Smell the pollen",
+                "name":"Smell the pollen.",
                 "narrator": "{i}You were so excited to meet someone new the poison only calms you down.{n}You can now think more clearly.{s}",
                 "symptoms": -10
             }
@@ -92,7 +92,7 @@
         "water": [
             {
                 "nbSymptomsNeeded": 24,
-                "name": "Give her something to drink",
+                "name": "Give her something to drink.",
                 "narrator": "{i}This actually doesn't seem to improve her situation at all.{n}Green leaves begin to sprout out of her body, eventually strangling her...{s}",
                 "sickness": 100
             }
@@ -100,9 +100,10 @@
         "punch": [
             {
                 "nbSymptomsNeeded": 4444,
-                "name": "Attack the intruder",
-                "text": "{i}She takes it as a greeting, and greets you back.{n}Sadly for you, her punch packs quite a bit more than yours{s}",
-                "sickness": 100
+                "name": "Attack the intruder.",
+                "text": "{i}She takes it as a greeting, and greets you back.{n}Sadly for you, her punch packs quite a bit more than yours.{s}",
+                "sickness": 100,
+                "sound": "punch"
             }
         ],
         "medicine": [
@@ -111,11 +112,12 @@
                 "name": "Give her something against allergies.",
                 "narrator": "{i}Maybe you should have used it for Satori ?{n}It seems to work against the symptoms, but she still feels uneasy.{s}",
                 "sickness": -40,
-                "symptoms": -10
+                "symptoms": -10,
+                "sound": "pills"
             },
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Give her some more Medicine",
+                "name": "Give her some more Medicine.",
                 "narrator": "{i}You hand her a doll Youkai.{n}She begins to sneeze danmaku at you...{s}",
                 "sickness": 100
             }

@@ -69,7 +69,8 @@
                 "unconsciousStateNeeded": "1",
                 "name": "Give her painkillers.",
                 "narrator": "{i}Pretty bad idea.{n}She begins shivering and collapses.{s}",
-                "unconsciousness": 1
+                "unconsciousness": 1,
+                "sound": "pills"
             }
         ],
         "medicine": [
@@ -77,7 +78,8 @@
                 "nbSymptomsNeeded": 0,
                 "name": "Give her some hot cocoa.",
                 "narrator": "{i}Her temperature stabilizes.{n}Looks like it was a good idea !{s}",
-                "sickness": -60
+                "sickness": -60,
+                "sound": "drink"
             },
             {
                 "name": "Give her some medicine",

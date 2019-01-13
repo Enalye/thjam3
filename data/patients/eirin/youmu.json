@@ -13,13 +13,15 @@
         "how": [
             {
                 "name": "How are you feeling ?",
-                "text": "GRMBLLLLBLB"
+                "text": "GRMBLLLLBLB",
+                "sound": "growl"
             }
         ],
         "what": [
             {
                 "name": "What happened to you ?",
-                "narrator": "GRMBLLLLBLBBLBL"
+                "narrator": "GRMBLLLLBLBBLBL",
+                "sound": "growl"
             }
         ]
     },
@@ -45,7 +47,8 @@
                 "nbSymptomsNeeded": 2,
                 "name": "Try to operate her to remove Myon.",
                 "narrator": "{i}As you open her up, the ghost lunges at you.{n}It seems you're going to be its next victim{s}",
-                "sickness": 100
+                "sickness": 100,
+                "sound": "growl"
             }
         ],
         "magic": [

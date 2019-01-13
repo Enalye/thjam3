@@ -18,7 +18,7 @@
             },
             {
                 "nbSymptomsNeeded": 1000,
-                "name": "Tell her you couldn't resist, since they were flavoured with real strawberry",
+                "name": "Tell her you couldn't resist, since they were flavoured with real strawberry.",
                 "text": "Yeah well, that and experiments don't mix well. I mean look at me !",
                 "symptoms": -1
             }
@@ -26,21 +26,21 @@
         "ask": [
             {
                 "nbSymptomsNeeded": 992,
-                "name": "Ask the bat youkai how she got here",
+                "name": "Ask the bat youkai how she got here.",
                 "text": "Well, obviously it was in this tank."
             }
         ],
         "who": [
             {
                 "nbSymptomsNeeded": 992,
-                "name": "Ask the bat youkai who she is",
+                "name": "Ask the bat youkai who she is.",
                 "text": "Ellis, at your service."
             }
         ],
         "help": [
             {
                 "nbSymptomsNeeded": 992,
-                "name": "Ask her if she can help with your friend's condition",
+                "name": "Ask her if she can help with your friend's condition.",
                 "text": "Ah, she must have been infected by one of the seeds.{n}I should be able to heal her... for a price",
                 "symptoms": -1
             }
@@ -48,7 +48,7 @@
         "accept" : [
             {
                 "nbSymptomsNeeded": 991,
-                "name": "Accept the Youkai's deal, whatever it is",
+                "name": "Accept the Youkai's deal, whatever it is.",
                 "narrator": "{s}She agitates her wand in the air.{n}Chiyuri gets healed, but at the price of your soul...{i}",
                 "sickness": 100
             }
@@ -58,7 +58,7 @@
         "check": [
             {
                 "nbSymptomsNeeded": 997,
-                "name": "Look at her closely",
+                "name": "Look at her closely.",
                 "narrator": "{i}You can find out stawberry plants growing on her.{n}A few fruits are ready to be picked.{s}",
                 "symptoms": -1,
                 "unconsciousness": 1
@@ -67,19 +67,19 @@
         "analyse": [
             {
                 "nbSymptomsNeeded": 999,
-                "name": "Take some samples of her cells",
+                "name": "Take some samples of her cells.",
                 "narrator": "{i}You'll need some laboratory equipment to analyse them.{s}",
                 "symptoms": -1
             },
             {
                 "unconsciousStateNeeded": 3,
-                "name": "Analyse the jam",
+                "name": "Analyse the jam.",
                 "narrator": "{i}It looks like something straight out of Makai.{n}What was the border police doing ?{s}",
                 "unconsciousness": 1
             },
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Study the bat Youkai",
+                "name": "Study the bat Youkai.",
                 "narrator": "{i}You manage to find out they carry naturally some kind of virus.{n}You make a vaccine for it.{s}",
                 "symptoms": -1
             }
@@ -89,7 +89,7 @@
         "science": [
             {
                 "nbSymptomsNeeded": 998,
-                "name": "Bring her to the laboratory",
+                "name": "Bring her to the laboratory.",
                 "narrator": "{i}For some reason, the password has been changed...{s}",
                 "symptoms": -1
             },
@@ -101,14 +101,14 @@
             },
             {
                 "nbSymptomsNeeded": 995,
-                "name": "Open the tank",
+                "name": "Open the tank.",
                 "narrator": "{i}It is full of fruit bats.{s}",
                 "symptoms": -1
             },
             {
                 "unconsciousStateNeeded": 4,
                 "nbSymptomsNeeded": 990,
-                "name": "Make an antidote",
+                "name": "Make an antidot.e",
                 "narrator": "{i}The strawberries begin to rot and wither.{n}But you'll still have to remove the roots somehow.{s}",
                 "symptoms": -1,
                 "sickness": -5
@@ -117,7 +117,7 @@
         "medicine": [
             {
                 "nbSymptomsNeeded": 0,
-                "name":"Inocculate Chiyuri with the vaccine",
+                "name":"Inocculate Chiyuri with the vaccine.",
                 "narrator": "{i}It seems to work !{s}",
                 "sickness": -100
             }
@@ -125,13 +125,13 @@
         "operate": [
             {
                 "nbSymptomsNeeded": 990,
-                "name": "Try to operate Chiyuri",
+                "name": "Try to operate Chiyuri.",
                 "narrator": "{i}You are a physicist, not a physician !{s}",
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 989,
-                "name": "Put Chyuri in one of your cryogenic tubes",
+                "name": "Put Chyuri in one of your cryogenic tubes.",
                 "narrator": "{i}She falls into a deep sleep. It seems to at least stabilize her.{s}",
                 "unconsciousness": 5,
             }
@@ -139,15 +139,16 @@
         "bomb" : [
             {
                 "nbSymptomsNeeded": 997,
-                "name": "Bomb the laboratory door",
+                "name": "Bomb the laboratory door.",
                 "narrator": "{i}BOOM. It is cleared up now.{s}",
-                "symptoms": -1
+                "symptoms": -1,
+                "sound":"explosion"
             }
         ],
         "harvest": [
             {
                 "unconsciousStateNeeded": 2,
-                "name": "Harvest",
+                "name": "Harvest.",
                 "narrator": "{i}You pick up some of the strawberries.{s}",
                 "symptoms": -1
             }
@@ -155,15 +156,16 @@
         "taste": [
             {
                 "unconsciousStateNeeded": 2,
-                "name":"Taste",
+                "name": "Taste the strawberries.",
                 "narrator": "{i}You taste one of the fruits.{n}That wasn't very smooth of you, they are poisonous !{s}",
-                "sickness": 100
+                "sickness": 100,
+                "sound": "eat"
             }
         ],
         "jam": [
             {
                 "unconsciousStateNeeded": 2,
-                "name":"Make jam",
+                "name": "Make jam.",
                 "narrator": "{i}You make jam out of the strawberries.{n}Weirdly enough, the jam is actually purple.{s}",
                 "unconsciousness": 1
             }
@@ -171,23 +173,24 @@
         "feed": [
             {
                 "nbSymptomsNeeded": 994,
-                "name": "Feed the bats with the strawberries",
-                "narrator": "{i}It seems they'd rather eat something else{n}",
+                "name": "Feed the bats with the strawberries.",
+                "narrator": "{i}It seems they'd rather eat something else.{n}",
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 993,
-                "name": "Feed the bats with you blood",
-                "narrator": "{i}Way to sign a contract with the devil.{n}The bat turns into a youkai girl{s}",
+                "name": "Feed the bats with you blood.",
+                "narrator": "{i}Way to sign a contract with the devil.{n}The bat turns into a youkai girl.{s}",
                 "symptoms": -1
             }
         ],
         "taser" : [
             {
                 "nbSymptomsNeeded": 991,
-                "name": "Use your gun and exterminate the Youkai",
+                "name": "Use your gun and exterminate the Youkai.",
                 "narrator": "{s}A pretty hard danmaku battle awaits{n}But once again, science prevails !{n}You imprison the Youkai in one of your cryogenic tubes.{i}",
-                "symptoms": -990
+                "symptoms": -990,
+                "sound": "punch"
             }
         ]
     }

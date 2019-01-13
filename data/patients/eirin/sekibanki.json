@@ -48,7 +48,8 @@
                 "nbSymptomsNeeded": 1,
                 "name": "Attach her head back.",
                 "narrator": "{i}You try attaching her head back{n}but it falls on the ground.{s}",
-                "sickness": 20
+                "sickness": 20,
+                "sound": "punch"
             },
             {
                 "nbSymptomsNeeded": 0,

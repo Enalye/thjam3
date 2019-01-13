@@ -45,12 +45,12 @@
         "prosthesis": [
             {
                 "nbSymptomsNeeded": 0,
-                "name": "Give her a cone",
+                "name": "Give her a cone.",
                 "narrator": "{i}This cone should avoid her scratching too much,{n}but she looks annoyed at the idea.{s}",
                 "sickness": -30
             },
             {
-                "name": "Give her a prosthesis",
+                "name": "Give her a prosthesis.",
                 "narrator": "{i}You lose precious time making plans for a useless contraption.{n}It looks like her state has worsen meanwhile...{s}",
                 "sickness": 20
             }
@@ -58,15 +58,17 @@
         "medicine": [
             {
                 "nbSymptomsNeeded": 0,
-                "name": "Give her a vermifuge",
+                "name": "Give her a vermifuge.",
                 "text": "Ah, thank you.{n}I can already hear them stop bugging me.",
-                "sickness": -30
+                "sickness": -30,
+                "sound": "pills"
             },
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Give her some coffee",
+                "name": "Give her some coffee.",
                 "narrator": "{i}You give her some coffee to wake her up.{n}Now she isn't drowsy anymore.{s}",
-                "symptoms": -1
+                "symptoms": -1,
+                "sound": "drink"
             }
         ]
     }
