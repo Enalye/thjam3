@@ -160,11 +160,13 @@ class SceneGui: GuiElement {
         _doctor = new Doctor(doctorName);
         _doctorSprite = fetch!Sprite(_doctor.id ~ "_face");
         _patient = _doctor.getNextPatient();
+
+        // Sanity assertion
         if(_patient is null)
             return;
 
-        _syringeGUI = new SyringeGui();
-
+        _syringeGUI = new SyringeGui(_patient);
+        addChildGui(_syringeGUI);
         addChildGui(dialogGui);
         addChildGui(patientGui);
         updateGUIs();
@@ -237,6 +239,8 @@ class SceneGui: GuiElement {
         else if(isSuccess && !endTimer.isRunning) {
             isSuccess = false;
             _patient = _doctor.getNextPatient();
+            updateGUIs();
+            _syringeGUI.updatePatientReference(_patient);
         }
     }
 
@@ -250,16 +254,30 @@ class SceneGui: GuiElement {
 }
 
 class SyringeGui: GuiElement {
-    Sprite _syringeGUI, _gaugeGUI;
+    Sprite _syringeSprite, _gaugeSprite;
     Patient _patientReference;
 
-    int _startY;
+    float _startHeight;
 
-    this() {
-        _syringeGUI = fetch!Sprite("syringe");
-        _gaugeGUI = fetch!Sprite("gauge");
-        //_startY = _gaugeGUI.y;
-        // TODO : color _gaugeGUI.color = ;
+    float _oldLevel;
+    float _targetLevel;
+
+    Timer _timer;
+
+    this(Patient patient) {
+        size(Vec2f(142f, 600f));
+        _syringeSprite  = fetch!Sprite("syringe");
+        _gaugeSprite    = fetch!Sprite("gauge");
+        _startHeight    = _gaugeSprite.size.y;
+
+        _syringeSprite.scale = Vec2f(0.5f, 0.5f);
+        _gaugeSprite.scale = Vec2f(0.5f, 0.5f);
+        _gaugeSprite.color = Color(1f, 0.55f, 0, 0.5f);
+        _gaugeSprite.anchor = Vec2f(0.5f, 1f);
+
+        _patientReference = patient;
+        _oldLevel = 0;
+        _targetLevel = 0;
     }
 
     void updatePatientReference(Patient patient) {
@@ -268,12 +286,20 @@ class SyringeGui: GuiElement {
 
     override void update(float deltaTime) {
         float level = _patientReference.getSicknessLevel();
-        //_gaugeGUI.fit(_gaugeGUI.x, _startY * level);
+        if(level != _oldLevel) {
+            _oldLevel = _targetLevel;
+            _targetLevel = level;
+            _timer.start(0.5f);
+        }
+
+        float displayLevel = _oldLevel.lerp(_targetLevel, easeOutBounce(_timer.time));
+        //_debugLevel = max(0, min(1, _debugLevel + 0.01f * deltaTime));
+        _gaugeSprite.size.y =  _startHeight * displayLevel;
     }
 
     override void draw() {
-        _syringeGUI.draw(Vec2f(15, center.y));
-        _gaugeGUI.draw(Vec2f(15, center.y));
+        _syringeSprite.draw(Vec2f(100, center.y));
+        _gaugeSprite.draw(Vec2f(100, center.y + 102));
     }
 }
 

@@ -1,1 +1,1 @@
-{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":600,"w":150,"x":0,"y":0},"name":"syringe","type":"sprite"},{"clip":{"h":368,"w":100,"x":175,"y":135},"name":"gauge","type":"sprite"}],"texture":"media\\gui\\syringe.png"}
+{"DOCTYPE":"IMAGE","elements":[{"clip":{"h":600,"w":142,"x":0,"y":0},"name":"syringe","type":"sprite"},{"clip":{"h":368,"w":100,"x":175,"y":135},"name":"gauge","type":"sprite"}],"texture":"media\\gui\\syringe.png"}
