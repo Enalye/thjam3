@@ -117,9 +117,18 @@ class Patient {
                     break;
                 }
             }
+            foreach(value; ary) {
+                if(!hasJson(value, "unconsciousStateNeeded"))
+                    continue;
+                if(getJsonInt(value, "unconsciousStateNeeded") == _unconsciousness) {
+                    _savedNodes[tag] = value;
+                    hasValue = true;
+                    break;
+                }
+            }
             if(!hasValue && ary.length) {
                 foreach(value; ary) {
-                    if(!hasJson(value, "nbSymptomsNeeded")) {
+                    if(!hasJson(value, "nbSymptomsNeeded") && !hasJson(value, "unconsciousStateNeeded")) {
                         _savedNodes[tag] = value;
                         hasValue = true;
                         break;
