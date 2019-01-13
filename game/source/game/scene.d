@@ -80,7 +80,7 @@ private final class MainButton: Button {
     }
 
     override void update(float deltaTime) {
-        if(!isHovered) {
+        if(!isHovered || isLocked) {
             doTransitionState("default");
             _btnName.doTransitionState("default");
         }
