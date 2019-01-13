@@ -1,5 +1,6 @@
 {
     "id": "koishi",
+    "select": "select_koishi",
     "name": "Koishi",
     "patients": [
         "satori"
