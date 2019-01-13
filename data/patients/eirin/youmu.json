@@ -13,13 +13,13 @@
         "how": [
             {
                 "name": "How are you feeling ?",
-                "narrator": "{i}She growls at you.{s}"
+                "text": "GRMBLLLLBLB"
             }
         ],
         "what": [
             {
                 "name": "What happened to you ?",
-                "narrator": "{i}She growls at you.{s}"
+                "narrator": "GRMBLLLLBLBBLBL"
             }
         ]
     },
