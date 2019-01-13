@@ -107,6 +107,11 @@ class Patient {
         return _sickness >= 100;
     }
 
+    float getSicknessLevel() {
+        float sicknessLevel = to!float(_sickness) / 100f;
+        return min(max(0, sicknessLevel), 100);
+    }
+
     private Tuple!(string, string)[] getList(string id) {
         if(!hasJson(_json, id))
             throw new Exception("No scope \'" ~ id ~ "\' found in patient");

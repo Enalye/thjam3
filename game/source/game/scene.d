@@ -123,6 +123,8 @@ class SceneGui: GuiElement {
     ObserveGui  _observeGUI;
     ActionGui   _actionGUI;
 
+    SyringeGui  _syringeGUI;
+
     Sprite _bgSprite, _bordersSprite, _doctorSprite;
 
     this(string doctorName) {
@@ -160,6 +162,8 @@ class SceneGui: GuiElement {
         _patient = _doctor.getNextPatient();
         if(_patient is null)
             return;
+
+        _syringeGUI = new SyringeGui();
 
         addChildGui(dialogGui);
         addChildGui(patientGui);
@@ -242,6 +246,34 @@ class SceneGui: GuiElement {
         _doctorSprite.fit(Vec2f(280, 280));
         _doctorSprite.draw(Vec2f(screenWidth, 0));
         _bordersSprite.draw(center);
+    }
+}
+
+class SyringeGui: GuiElement {
+    Sprite _syringeGUI, _gaugeGUI;
+    Patient _patientReference;
+
+    int _startY;
+
+    this() {
+        _syringeGUI = fetch!Sprite("syringe");
+        _gaugeGUI = fetch!Sprite("gauge");
+        //_startY = _gaugeGUI.y;
+        // TODO : color _gaugeGUI.color = ;
+    }
+
+    void updatePatientReference(Patient patient) {
+        _patientReference = patient;
+    }
+
+    override void update(float deltaTime) {
+        float level = _patientReference.getSicknessLevel();
+        //_gaugeGUI.fit(_gaugeGUI.x, _startY * level);
+    }
+
+    override void draw() {
+        _syringeGUI.draw(Vec2f(15, center.y));
+        _gaugeGUI.draw(Vec2f(15, center.y));
     }
 }
 
