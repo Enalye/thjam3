@@ -129,7 +129,7 @@ class Patient {
 
     float getSicknessLevel() {
         float sicknessLevel = to!float(_sickness) / 100f;
-        return min(max(0, sicknessLevel), 100);
+        return min(max(0, sicknessLevel), 1);
     }
 
     private Tuple!(string, string)[] getList(string id) {

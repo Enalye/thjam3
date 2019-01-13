@@ -71,7 +71,7 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Absorb some of the energy",
-                "narrator": "{i}You absorb some of the radiations{n}It damages your DNA, but thanks to your ability, you can repair it easily.n}Utsuho should be less unstable now.{s}",
+                "narrator": "{i}You absorb some of the radiations{n}It damages your DNA, but thanks to your ability, you can repair it easily.{n}Utsuho should be less unstable now.{s}",
                 "sickness": -50,
                 "symptoms": -1
             }

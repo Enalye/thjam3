@@ -5,7 +5,7 @@
         "symptoms": 5
     },
     "hello": {
-        "text": "{i}A red head girl enters in the office, {n}carrying with pain two unconscious bodies, then leaves.{s}"
+        "narrator": "{i}A red head girl enters in the office, {n}carrying with pain two unconscious bodies, then leaves.{s}"
     },
     "talks": {
         "how": [
@@ -39,7 +39,7 @@
             {
                 "nbSymptomsNeeded": 5,
                 "name": "Check out their wounds.",
-                "text": "{i}You notice burns on their skin.{s}",
+                "narrator": "{i}You notice burns on their skin.{s}",
                 "symptoms": -1
             }
         ],

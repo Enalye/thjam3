@@ -7,19 +7,19 @@
         "symptoms": 5
     },
     "hello": {
-        "text": "{i}The next patient enters the room crawling on their four limbs.{n}You recognize the Netherworld Gardener.{s}"
+        "narrator": "{i}The next patient enters the room crawling on their four limbs.{n}You recognize the Netherworld Gardener.{s}"
     },
     "talks": {
         "how": [
             {
                 "name": "How are you feeling ?",
-                "narrator": "{i}She growls at you.{s}"
+                "text": "GRMBLLLLBLB"
             }
         ],
         "what": [
             {
                 "name": "What happened to you ?",
-                "narrator": "{i}She growls at you.{s}"
+                "narrator": "GRMBLLLLBLBBLBL"
             }
         ]
     },
