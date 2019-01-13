@@ -38,7 +38,7 @@
         "cheer": [
             {
                 "nbSymptomsNeeded": 9,
-                "name": "Cheer her up by agitating your arms",
+                "name": "Cheer her up by agitating your arms.",
                 "narrator": "{i}It always manages to lighten up her mood.{n}She is less tense already.{s}",
                 "symptoms": -5,
                 "sickness": -25
@@ -47,7 +47,7 @@
         "cat": [
             {
                 "unconsciousStateNeeded": "1",
-                "name": "Call rin to play",
+                "name": "Call rin to play.",
                 "narrator": "{i}She meows and curls on Satori.{n}It would be very cute, if not for a now unconscious Satori...{s}",
                 "symptoms": -10,
                 "sickness": 20,
@@ -59,7 +59,7 @@
         "check": [
             {
                 "nbSymptomsNeeded": 14,
-                "name": "Check her eye",
+                "name": "Check her eye.",
                 "narrator": "{i}You notice her third eye is bloated, and abnormally red.{s}",
                 "symptoms": -1
             }
@@ -67,7 +67,7 @@
         "mindread": [
             {
                 "nbSymptomsNeeded": 13,
-                "name": "Try to read her subconscious",
+                "name": "Try to read her subconscious.",
                 "narrator": "{i}You feel a burning eye. You see sea of flammes.{s}",
                 "symptoms": -4
             }
@@ -75,7 +75,7 @@
         "analyze": [
             {
                 "nbSymptomsNeeded": 5,
-                "name": "Analyze her eye closely",
+                "name": "Analyze her eye closely.",
                 "narrator": "{i}You notice fur stuck on her eyelid.{n}Her retina also seem to have suffered some damage.{s}",
                 "symptoms": -1
             }
@@ -85,7 +85,7 @@
         "silly": [
             {
                 "nbSymptomsNeeded": 3,
-                "name": "Attach wings to the third eye",
+                "name": "Attach wings to the third eye.",
                 "narrator": "{i}The third eye now became an evil eye.{n}It cries bloody tears.{n}This is painful but it gets less bloated in the end.{s}",
                 "symptoms": -3,
                 "sickness": 50
@@ -94,7 +94,7 @@
         "operate": [
             {
                 "nbSymptomsNeeded": 4,
-                "name": "Operate her eye",
+                "name": "Operate her eye.",
                 "narrator": "{i}You make an incision in her eye using one of your rose's thorns.{n}After only a few minutes, you manage to extract fur from inside the eye.{n}Looks like is still pretty damaged though.{s}",
                 "sickness": -25,
                 "symptoms": -1,
@@ -104,15 +104,16 @@
         "punch": [
             {
                 "unconsciousStateNeeded": "1",
-                "name": "Kick the eye",
+                "name": "Kick the eye.",
                 "text": "Sister, I'm pretty sure this won't help.{n}I really wonder what you're thinking sometimes.",
-                "sickness": 10
+                "sickness": 10,
+                "sound": "punch"
             }
         ],
         "prosthesis": [
             {
                 "nbSymptomsNeeded": 0,
-                "name": "Try to find something to patch her up",
+                "name": "Try to find something to patch her up.",
                 "narrator": "{i}Looking into your trinkets, you find an adaptative Kappa lense.{n}The lucky find should help with Satori's sight.",
                 "sickness": -100,
                 "symptoms": -1

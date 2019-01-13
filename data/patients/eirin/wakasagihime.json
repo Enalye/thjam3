@@ -37,7 +37,7 @@
         "check": [
             {
                 "nbSymptomsNeeded": 3,
-                "name": "Perform a usual checkup.",
+                "name": "Perform a usual checkup",
                 "narrator": "{i}Her scales are very dry.{s}",
                 "symptoms": -1
             }
@@ -46,7 +46,7 @@
     "actions": {
         "painkillers": [
             {
-                "name": "Give her painkillers.",
+                "name": "Give her painkillers",
                 "text": "That should really help with my headache, thanks !",
                 "sickness": -40
             }
@@ -54,10 +54,11 @@
         "water": [
             {
                 "nbSymptomsNeeded": 2,
-                "name": "Give her some water.",
+                "name": "Give her some water",
                 "text": "Ah, thanks, this is revitalizing.{n}More please !",
                 "sickness": -10,
-                "symptoms": -1
+                "symptoms": -1,
+                "sound": "drink"
             },
             {
                 "nbSymptomsNeeded": 1,

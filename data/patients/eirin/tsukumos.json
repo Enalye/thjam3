@@ -60,7 +60,8 @@
                 "name": "Give them some painkillers.",
                 "narrator": "{i}This should calm them down and make it less painful.{s}",
                 "sickness": -50,
-                "symptoms": -1
+                "symptoms": -1,
+                "sound": "pills"
             },
             {
                 "nbSymptomsNeeded": 1,
@@ -72,10 +73,11 @@
         "medicine": [
             {
                 "nbSymptomsNeeded": 3,
-                "name": "Give them a cure-all",
+                "name": "Give them a cure-all.",
                 "narrator": "{i}The medicine begins to kick in and wakes them up.{s}",
                 "sickness": -30,
-                "symptoms": -1
+                "symptoms": -1,
+                "sound": "pills"
             },
             {
                 "nbSymptomsNeeded": 0,

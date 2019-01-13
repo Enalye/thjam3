@@ -27,20 +27,20 @@
     "observations": {
         "check": [
             {
-                "name": "Check out her body",
+                "name": "Check out her body.",
                 "narrator": "{i}Nothing unusual...{n}Aside from her face turned backwards.{s}"
             }
         ],
         "scanner": [
             {
                 "nbSymptomsNeeded": 5,
-                "name": "Use the lunarian scanner",
+                "name": "Use the lunarian scanner.",
                 "narrator": "{i}Her bones and ligaments around the neck are twisted.{n}Using her power like this was clearly a bad idea.{s}",
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 2,
-                "name": "Use the lunarian scanner",
+                "name": "Use the lunarian scanner.",
                 "narrator": "{i}The damage you did actually helped a bit.{n}Now you should be able to operate her.{s}",
                 "symptoms": -1
             }
@@ -50,23 +50,24 @@
         "punch": [
             {
                 "nbSymptomsNeeded": 3,
-                "name": "Punch her head back into place",
+                "name": "Punch her head back into place.",
                 "narrator": "{i}You punch her hard and hear a loud crack.{n}Congratulations, you fractured the bones !{s}",
                 "symptoms": -1,
-                "sickness": 20
+                "sickness": 20,
+                "sound": "punch"
             }
         ],
         "painkillers": [
             {
                 "nbSymptomsNeeded": 2,
-                "name": "Give her pain killers",
+                "name": "Give her pain killers.",
                 "text": "Pain killers ?{n}No thanks, pain makes me more alive !"
             }
         ],
         "operate": [
             {
                 "nbSymptomsNeeded": 1,
-                "name": "Operate her",
+                "name": "Operate her.",
                 "narrator": "{i}It takes you a few hours in the block,{n}but you manage to put back most of her bones in the right place{s}",
                 "sickness": -100
             }
