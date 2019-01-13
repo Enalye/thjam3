@@ -91,7 +91,7 @@ final class MainMenuGui: GuiElement {
 
     override void onSubmit() {
         removeRootGuis();
-        ddRootGui(new SceneGui(files[selectId]));
+        addRootGui(new SceneGui(files[selectId]));
     }
 
     override void update(float deltaTime) {
