@@ -1,5 +1,6 @@
 {
     "name": "Wakasagihime",
+    "anim": "wakasagihime",
     "init": {
         "sickness": 90,
         "symptoms": 4

@@ -1,5 +1,6 @@
 {
     "name": "Tsukumos Sisters",
+    "anim": "tsukumos",
     "init": {
         "sickness": 90,
         "symptoms": 5

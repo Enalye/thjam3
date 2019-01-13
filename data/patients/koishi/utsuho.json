@@ -1,5 +1,6 @@
 {
     "name": "Utsuho",
+    "anim": "utsuho",
     "init": {
         "unconsciousness": 1,
         "sickness": 80,

@@ -1,5 +1,6 @@
 {
     "name": "Chiyuri",
+    "anim": "chiyuri",
     "init": {
         "unconsciousness": 1,
         "sickness": 99,

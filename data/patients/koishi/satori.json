@@ -1,5 +1,6 @@
 {
     "name": "Satori",
+    "anim": "satori",
     "init": {
         "unconsciousness": 1,
         "sickness": 75,

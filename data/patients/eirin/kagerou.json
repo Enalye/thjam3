@@ -4,6 +4,7 @@
         "sickness": 40,
         "symptoms": 3
     },
+    "anim": "kagerou",
     "hello": {
         "text": "I haven't slept in days.{n}Or nights, for the matter."
     },

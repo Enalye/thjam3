@@ -1,5 +1,6 @@
 {
     "name": "Yuuka",
+    "anim": "yuuka",
     "init": {
         "unconsciousness": 1,
         "sickness": 80,
