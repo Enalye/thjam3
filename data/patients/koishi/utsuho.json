@@ -11,8 +11,10 @@
     "talks": {
         "how": [
             {
+                "nbSymptomsNeeded": 3,
                 "name": "How are you feeling ?",
-                "text": "Sleepy. Actually, I have felt drained out for ages now."
+                "text": "Sleepy. Actually, I have felt drained out for ages now.",
+                "symptoms": -1
             }
         ],
         "what": [
@@ -21,6 +23,12 @@
                 "name": "What happened to you ?",
                 "text": "Well, it's this time of the month again. It is erupting.",
                 "symptoms": -600
+            },
+            {
+                "nbSymptomsNeeded": 2,
+                "name": "It happens every month you say ?",
+                "text": "Well sometimes it is the opposite and it's a nuclear winter.{n}Usually it ends up with me being somehow gapped{n}to space and giving birth to a new star.{s}",
+                "symptoms": -1
             }
         ]
     },
@@ -29,33 +37,56 @@
             {
                 "nbSymptomsNeeded": 66,
                 "name": "Check her up",
-                "narrator": "{i}She sweats, but it looks like the droplets vaporize almost instantaneously.{n}You touch her skin... Ouch ! She's burning !{s}",
+                "narrator": "{i}She sweats, but it looks like the droplets{n}vaporize almost instantaneously.{n}You touch her skin... Ouch ! She's burning !{s}",
                 "symptoms": -60
             }
         ],
         "mindread": [
             {
+                "nbSymptomsNeeded": 4,
                 "name": "Read her subconscious",
-                "narrator": "{i}You can feel the Yatagarasu. It looks like there is an eruption ongoing.{s}"
+                "narrator": "{i}You can feel the Yatagarasu. It looks like there is an eruption ongoing.{s}",
+                "symptoms": -1
             }
         ],
         "temperature": [
             {
+                "nbSymptomsNeeded": 5,
                 "name": "Take her temperature",
-                "narrator": "{i}She is definitely hotter than usual, that's for sure.{n}Now, you know exactly how cold she needs to get.{s}"
+                "narrator": "{i}She is definitely hotter than usual, that's for sure.{n}Now, you know exactly how cold she needs to get.{s}",
+                "symptoms": -1
             }
         ],
         "stare": [
             {
+                "nbSymptomsNeeded": 3,
                 "name": "Stare at her",
-                "narrator": "{i}Staring is quite a bold move.{n}You become blind{s}",
+                "narrator": "{i}Staring is quite a bold move, seeing she is currently radiating.{n}You become blind.{s}",
                  "sickness": 100
             }
         ]
     },
     "actions": {
+        "absorb": [
+            {
+                "nbSymptomsNeeded": 1,
+                "name": "Absorb some of the energy",
+                "narrator": "{i}You absorb some of the radiations{n}It damages your DNA, but thanks to your ability, you can repair it easily.n}Utsuho should be less unstable now.{s}",
+                "sickness": -50,
+                "symptoms": -1
+            }
+        ],
+        "nuclear": [
+            {
+                "nbSymptomsNeeded": 1,
+                "name": "Try to tickle her",
+                "narrator": "{i}A chain reaction starts and she goes nuclear.{n}Quite a way to make hell great again !{s}",
+                "sickness": 100
+            }
+        ],
         "operate": [
             {
+                "nbSymptomsNeeded": 2,
                 "name": "Try operating her to take the Yatagarasu out",
                 "narrator": "{i}You open up Utsuho and try to dislodge the Yatagarasu core from her body.{n}Sadly, before you manage to complete the procedure, her heart stops...{s}",
                 "sickness": 100
@@ -63,13 +94,16 @@
         ],
         "punch": [
             {
+                "nbSymptomsNeeded": 6,
                 "name": "Use a spellcard",
-                "narrator": "{i}She bombs it.{n}You manage to escape the blackhole by shee luck.{n}It seems she at least cooled off.{s}",
-                "sickness": 20
+                "narrator": "{i}She bombs it.{n}You manage to escape the blackhole by sheer luck.{n}It seems she at least cooled off.{s}",
+                "sickness": -20,
+                "symptoms": -1
             }
         ],
         "water": [
             {
+                "nbSymptomsNeeded": 0,
                 "name": "Lead her to the Misty Lake to cool her off",
                 "narrator": "{i}The lake is surprisingly frozen !{n}That's even better than expected.{n}It looks like the nuclear core colled off... For now.{s}",
                 "sickness": -100
