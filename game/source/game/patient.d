@@ -2,7 +2,7 @@ module game.patient;
 
 import std.stdio, std.file, std.json, std.random, std.typecons, std.algorithm;
 import atelier;
-import game.doctor, game.dialog;
+import game.doctor, game.dialog, game.patient_gui;
 
 enum PatientState {
     Normal, Unconscious, Cured, InPain, Dead, Failed, Happy, Distress
@@ -38,6 +38,10 @@ class Patient {
             if(hasJson(hello, "narrator")) {
                 dialogGui.setNewDialog(getJsonStr(hello, "narrator"));
             }
+        }
+
+        if(hasJson(_json, "anim")) {
+            patientGui.setCharacter(getJsonStr(_json, "anim"));
         }
     }
 
