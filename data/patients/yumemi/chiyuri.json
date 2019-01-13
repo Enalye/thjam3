@@ -14,13 +14,13 @@
             {
                 "nbSymptomsNeeded": 1001,
                 "name": "Which experiment already ?",
-                "text": "Ah, I should have seen this coming. I told you not to drink these old fashion liquors...",
+                "text": "Ah, I should have seen this coming.{n}I told you not to drink these old fashion liquors...",
                 "symptoms": -1
             },
             {
                 "nbSymptomsNeeded": 1000,
                 "name": "Tell her you couldn't resist, since they were flavoured with real strawberry.",
-                "text": "Yeah well, that and experiments don't mix well. I mean look at me !",
+                "text": "Yeah well, that and experiments don't mix well.{n}I mean look at me !",
                 "symptoms": -1
             }
         ],
@@ -134,7 +134,7 @@
                 "nbSymptomsNeeded": 989,
                 "name": "Put Chyuri in one of your cryogenic tubes.",
                 "narrator": "{i}She falls into a deep sleep. It seems to at least stabilize her.{s}",
-                "unconsciousness": 5,
+                "unconsciousness": 5
             }
         ],
         "bomb" : [

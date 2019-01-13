@@ -66,8 +66,7 @@
             {
                 "nbSymptomsNeeded": 1,
                 "name": "Give them some painkillers.",
-                "narrator": "{i}You've already given them some.{n}Some more could be a bad idea seeing their state.{s}",
-                "symptoms": -1
+                "narrator": "{i}You've already given them some.{n}Some more could be a bad idea seeing their state.{s}"
             }
         ],
         "medicine": [

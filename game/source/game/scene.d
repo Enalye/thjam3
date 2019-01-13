@@ -339,6 +339,10 @@ class SyringeGui: GuiElement {
     }
 
     override void update(float deltaTime) {
+        if(_patientReference is null) {
+            return;
+        }
+
         float level = _patientReference.getSicknessLevel();
         if(_targetLevel != level) {
             _oldLevel = _targetLevel;

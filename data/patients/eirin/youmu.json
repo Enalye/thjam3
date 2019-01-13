@@ -55,7 +55,7 @@
             {
                 "nbSymptomsNeeded": 2,
                 "name": "Try to perform a good old fashioned exorcism.",
-                "narrator": "{i}You try performing an exorcism.{n}After several hours of old incantations, you manage to purge the ghost out of her system successfully.{s}",
+                "narrator": "{i}You try performing an exorcism.{n}After several hours of old incantations,{n}you manage to purge the ghost out of her system successfully.{s}",
                 "sickness": -50
             }
         ],

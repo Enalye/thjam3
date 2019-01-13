@@ -48,7 +48,7 @@
                 "nbSymptomsNeeded": 0,
                 "name": "Give her a cone.",
                 "narrator": "{i}This cone should avoid her scratching too much,{n}but she looks annoyed at the idea.{s}",
-                "sickness": -30
+                "sickness": -50
             },
             {
                 "name": "Give her a prosthesis.",
@@ -61,7 +61,7 @@
                 "nbSymptomsNeeded": 0,
                 "name": "Give her a vermifuge.",
                 "text": "Ah, thank you.{n}I can already hear them stop bugging me.",
-                "sickness": -30,
+                "sickness": -50,
                 "sound": "pills"
             },
             {
