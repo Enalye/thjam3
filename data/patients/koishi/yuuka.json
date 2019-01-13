@@ -1,0 +1,132 @@
+{
+    "name": "Yuuka",
+    "init": {
+        "unconsciousness": 1,
+        "sickness": 80,
+        "symptoms": 4444
+    },
+    "hello": {
+        "narrator": "{i}A girl with a checkered pattern bursts angrily into the palace.{n}Looks like she forced her way in.{s}"
+    },
+    "talks": {
+        "who" : [
+            {
+                "nbSymptomsNeeded": 4444,
+                "name": "Who are you ?",
+                "text": "Yuuka Kazami, Flower Master of the Four Seasons.{n}Well, at least it was my title before some weird god stole it.",
+                "symptoms": -4000
+            }
+        ],
+        "how": [
+            {
+                "nbSymptomsNeeded": 444,
+                "name": "What are you doing in the underground ?",
+                "text": "Since yesterday I can't go to my fields without... consequences.{n}I heard that hell's thermal sources have medicinal properties.{n}So I came to check if the rumor was true.",
+                "symptoms": -400
+            }
+        ],
+        "what": [
+            {
+                "nbSymptomsNeeded": 44,
+                "name": "But why are you checking the palace of all places ?",
+                "text": "No reason really. I just wanted to check out this nice mansion{n}You really should hire a bodyguard.",
+                "symptoms": -10
+            }
+        ],
+        "ill": [
+            {
+                "nbSymptomsNeeded": 34,
+                "name": "Are you actually ill ?",
+                "text": "Well, last year I planted some new flowers.{n}They've started blooming recently.",
+                "symptoms": -10
+            }
+        ],
+        "ask": [
+            {
+                "nbSymptomsNeeded": 14,
+                "name": "Did you eat one of your flowers ?",
+                "text": "Are you serious ?{n}I am actually vegetarian.{n}I find this offensive.{n}",
+                "symptoms": -1
+            },
+            {
+                "nbSymptomsNeeded": 13,
+                "name": "What is it that you planted ?",
+                "text": "Some seeds my friend Medicine gave me.{n}I guess this was a bad idea actually, her plants make me numb.",
+                "symptoms": -1
+            },
+            {
+                "nbSymptomsNeeded": 1,
+                "name": "Ask her to visit her place",
+                "text": "Sure thing.{n}I can bring you there once I am healed.",
+                "symptoms": -1
+            }
+        ]
+    },
+    "observations": {
+        "check": [
+            {
+                "nbSymptomsNeeded": 12,
+                "name": "Check her up her skin",
+                "narrator": "{i}You notice her eyes and nose are red.{n}She seems to be embarrassed.{s}",
+                "symptoms": -1
+            }
+        ],
+        "mindread": [
+            {
+                "nbSymptomsNeeded": 1,
+                "name": "Read her mind",
+                "narrator": "{i}You're going to have pretty nightmares because of this...{s}",
+                "sickness": 100
+            }
+        ],
+        "smell": [
+            {
+                "nbSymptomsNeeded": 24,
+                "name":"Smell the pollen",
+                "narrator": "{i}You were so excited to meet someone new the poison only calms you down.{n}You can now think more clearly.{s}",
+                "symptoms": -10
+            }
+        ]
+    },
+    "actions": {
+        "water": [
+            {
+                "nbSymptomsNeeded": 24,
+                "name": "Give her something to drink",
+                "narrator": "{i}This actually doesn't seem to improve her situation at all.{n}Green leaves begin to sprout out of her body, eventually strangling her...{s}",
+                "sickness": 100
+            }
+        ],
+        "punch": [
+            {
+                "nbSymptomsNeeded": 4444,
+                "name": "Attack the intruder",
+                "text": "{i}She takes it as a greeting, and greets you back.{n}Sadly for you, her punch packs quite a bit more than yours{s}",
+                "sickness": 100
+            }
+        ],
+        "medicine": [
+            {
+                "nbSymptomsNeeded": 11,
+                "name": "Give her something against allergies.",
+                "narrator": "{i}Maybe you should have used it for Satori ?{n}It seems to work against the symptoms, but she still feels uneasy.{s}",
+                "sickness": -40,
+                "symptoms": -10
+            },
+            {
+                "nbSymptomsNeeded": 1,
+                "name": "Give her some more Medicine.",
+                "narrator": "{i}You hand her a doll Youkai.{n}She begins to sneeze danmaku at you...{s}",
+                "sickness": 100
+            }
+        ],
+        "rose": [
+            {
+                "nbSymptomsNeeded": 0,
+                "name": "Change her DNA to make her resistant to pollen.",
+                "text": "Wow, thank you !{n}Now I guess I can really master all kinds of flowers",
+                "sickness": -100
+            }
+        ]
+    }
+}

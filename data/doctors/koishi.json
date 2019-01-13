@@ -3,6 +3,8 @@
     "select": "select_koishi",
     "name": "Koishi",
     "patients": [
-        "utsuho"
+    	"satori",
+    	"utsuho",
+        "yuuka"
     ]
 }
